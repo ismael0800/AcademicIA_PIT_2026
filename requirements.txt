@@ -1,0 +1,12 @@
+torch
+pandas
+numpy
+scikit-learn
+matplotlib
+pydantic
+fastapi
+uvicorn
+pytest
+pypdf
+mlflow
+dvc
