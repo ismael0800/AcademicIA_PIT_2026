@@ -1,0 +1,26 @@
+# Parâmetros do projeto AcademicIA - Classificador de Editais
+dataset:
+  seed: 42
+  max_characters: 500
+  split:
+    train: 0.70
+    validation: 0.15
+    test: 0.15
+
+model:
+  vocab_size: 2500
+  embedding_dim: 64
+  hidden_dim: 64
+  num_classes: 5
+  classes:
+    - edital
+    - homologacao
+    - recurso
+    - resultado_final
+    - aviso
+
+training:
+  batch_size: 16
+  learning_rate: 0.001
+  epochs: 15
+  weight_decay: 0.01

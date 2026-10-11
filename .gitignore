@@ -1,0 +1,26 @@
+# Ambientes virtuais e Python
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testes e relatórios temporários
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLOps e Modelos Pesados
+mlruns/
+.dvc/cache/
+models/*.pt
+models/*.onnx
+
+# Dados Brutos / Segredos
+.env
+data/raw/**/*.pdf
+
+# Material de referência fornecido pelo professor
+Aurora_BR_Do_Zero_Aprimorada/
+*.zip
