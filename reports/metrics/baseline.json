@@ -1,0 +1,16 @@
+{
+  "modelo": "Baseline TF-IDF + LogisticRegression",
+  "dataset_train_rows": 47,
+  "dataset_val_rows": 10,
+  "accuracy": 0.7,
+  "f1_macro": 0.6611111111111111,
+  "f1_weighted": 0.6933333333333334,
+  "classes": [
+    "aviso",
+    "edital",
+    "homologacao",
+    "recurso",
+    "resultado",
+    "retificacao"
+  ]
+}
