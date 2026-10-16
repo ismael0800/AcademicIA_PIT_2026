@@ -1,0 +1,42 @@
+[
+  {
+    "arquivo": "RESULTADO FINAL DO PROCESSO SELETIVO PRH 59 ANP assinado.pdf",
+    "classe_real": "resultado",
+    "classe_predita": "edital",
+    "confianca_predita": 0.3726278841495514,
+    "trecho_texto": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA E ENGENHARIA DOS MATERIAIS Home Page: http://www.posgraduacao.ufpi.br//materiais E-mail: materiais@ufpi.e...",
+    "hipotese_do_erro": "Vocabulário com termos de cabeçalho compartilhados ou presença de expressões de ambas as categorias."
+  },
+  {
+    "arquivo": "HOMOLOGACAO_E_RESULTADO_EDITAL_PPGANT_02_2025-_UFPI_-_FAPEPI_2025_assinado.pdf",
+    "classe_real": "homologacao",
+    "classe_predita": "edital",
+    "confianca_predita": 0.3150910437107086,
+    "trecho_texto": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM ANTROPOLOGIA - PPGANT Campus Universitário “Ministro Petrônio Portella” – Bairro Ininga – Bloco 06 Telefone: (86) 3237-1410 – E-...",
+    "hipotese_do_erro": "Vocabulário com termos de cabeçalho compartilhados ou presença de expressões de ambas as categorias."
+  },
+  {
+    "arquivo": "ERRATA DO EDITAL 02-2025 AUXILIO AO PESQUISADOR.pdf",
+    "classe_real": "aviso",
+    "classe_predita": "edital",
+    "confianca_predita": 0.2829276919364929,
+    "trecho_texto": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS Campus universitário “Min. Petrônio Portella” – Bairro Ininga – Teresina, Pia...",
+    "hipotese_do_erro": "Vocabulário com termos de cabeçalho compartilhados ou presença de expressões de ambas as categorias."
+  },
+  {
+    "arquivo": "RESULTADO_FINAL_202607.pdf",
+    "classe_real": "resultado",
+    "classe_predita": "homologacao",
+    "confianca_predita": 0.5960467457771301,
+    "trecho_texto": "U N I V E R S I D A D E F E D E R A L D O P I A U Í M e s t r a d o N a c i o n a l P r o s s i o n a l e m E n s i n o d e F í s i c a \u0015 P o l o 2 6 E D I T A L I N T E R N O M N P E F / U F P I N º 0 2 / 2 0 2 6 R e s u l t a d o F i n a l A c o m ...",
+    "hipotese_do_erro": "Vocabulário com termos de cabeçalho compartilhados ou presença de expressões de ambas as categorias."
+  },
+  {
+    "arquivo": "EditalNacionalPROFIS-SBF-MNPEF2027-Retificacao1-Finalv23Set2026.pdf",
+    "classe_real": "retificacao",
+    "classe_predita": "aviso",
+    "confianca_predita": 0.3532671332359314,
+    "trecho_texto": "Sociedade Brasileira de Física (SBF) Programa de Pós-Graduação Nacional Profissional em Ensino de Física (PROFIS_SBF) Mestrado Nacional Profissional em Ensino de Física (MNPEF) EDITAL PROFIS_SBF Nº 02/2026 PROCESSO SELETIVO TURMA 2027 Retificação I :...",
+    "hipotese_do_erro": "Vocabulário com termos de cabeçalho compartilhados ou presença de expressões de ambas as categorias."
+  }
+]

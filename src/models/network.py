@@ -8,8 +8,11 @@ import io
 import torch
 import torch.nn as nn
 
-# Garante saída UTF-8 no terminal Windows
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 class TextClassifier(nn.Module):
     """

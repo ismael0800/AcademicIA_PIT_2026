@@ -14,8 +14,11 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-# Garante saída UTF-8 no terminal Windows
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 CURATED_DIR = Path("data/curated")
 MODELS_DIR = Path("models")

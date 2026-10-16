@@ -13,6 +13,8 @@ htmlcov/
 
 # MLOps e Modelos Pesados
 mlruns/
+mlflow.db
+mlartifacts/
 .dvc/cache/
 models/*.pt
 models/*.onnx

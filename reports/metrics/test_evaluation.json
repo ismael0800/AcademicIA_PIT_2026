@@ -1,0 +1,9 @@
+{
+  "modelo": "TextClassifier (PyTorch)",
+  "test_accuracy": 0.5454545454545454,
+  "test_f1_macro": 0.4563492063492063,
+  "test_f1_weighted": 0.49783549783549774,
+  "val_accuracy": 0.5,
+  "val_f1_macro": 0.4444444444444444,
+  "total_erros_teste": 5
+}
