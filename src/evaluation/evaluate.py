@@ -8,7 +8,6 @@ import io
 import json
 from pathlib import Path
 
-# Garante que a raiz do projeto esteja no sys.path
 ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -59,10 +58,9 @@ def avaliar_conjunto(model, dataset, classes_nomes):
 
 
 def plotar_matriz_confusao(y_true, y_pred, classes_nomes, output_path: Path):
-    cm = confusion_matrix(y_true, y_pred)
+    cm = confusion_matrix(y_true, y_pred, labels=range(len(classes_nomes)))
     plt.figure(figsize=(8, 6))
     
-    # Plota mapa de calor com anotação numérica
     plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Blues)
     plt.title("Matriz de Confusão — Teste Reservado (AcademicIA)", fontsize=13, pad=12)
     plt.colorbar()
@@ -71,8 +69,7 @@ def plotar_matriz_confusao(y_true, y_pred, classes_nomes, output_path: Path):
     plt.xticks(tick_marks, classes_nomes, rotation=35, ha="right", fontsize=10)
     plt.yticks(tick_marks, classes_nomes, fontsize=10)
 
-    # Escreve os números em cada célula
-    thresh = cm.max() / 2.0
+    thresh = cm.max() / 2.0 if cm.max() > 0 else 1.0
     for i in range(cm.shape[0]):
         for j in range(cm.shape[1]):
             val = cm[i, j]
@@ -91,7 +88,6 @@ def executar_avaliacao_completa():
     print("[*] INICIANDO AVALIAÇÃO DEFINITIVA DO MODELO (best.pt)")
     print("=" * 65)
 
-    # 1. Carrega o vocabulário e o melhor checkpoint
     vocab_path = MODELS_DIR / "vocab.json"
     checkpoint_path = MODELS_DIR / "best.pt"
 
@@ -99,35 +95,32 @@ def executar_avaliacao_completa():
     assert checkpoint_path.exists(), f"Checkpoint best.pt não encontrado em {checkpoint_path}. Execute o treino primeiro."
 
     vocab = Vocabulary.load(vocab_path)
-    checkpoint = torch.load(checkpoint_path, map_location="cpu")
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
 
-    # 2. Recria o modelo e carrega os pesos
     classes_nomes = [ID_TO_LABEL[i] for i in range(len(ID_TO_LABEL))]
     model = TextClassifier(
         vocab_size=checkpoint.get("vocab_size", len(vocab.w2i)),
-        embedding_dim=checkpoint.get("embedding_dim", 64),
-        hidden_dim=checkpoint.get("hidden_dim", 64),
-        num_classes=len(classes_nomes)
+        embedding_dim=checkpoint.get("embedding_dim", 128),
+        hidden_dim=checkpoint.get("hidden_dim", 96),
+        num_classes=len(classes_nomes),
+        num_filters=checkpoint.get("num_filters", 48)
     )
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
 
-    print(f"[OK] Modelo restaurado com sucesso! Salvo originalmente na Época {checkpoint['epoch']} com Val Loss de {checkpoint['val_loss']:.4f}")
+    print(f"[OK] Modelo restaurado com sucesso! Salvo na Época {checkpoint['epoch']} com Val Loss de {checkpoint['val_loss']:.4f} e Val Acc de {checkpoint['val_acc']*100:.1f}%")
     print("-" * 65)
 
-    # 3. Carrega o conjunto de Validação e de Teste Reservado
     df_val = pd.read_parquet(DATA_DIR / "validation.parquet")
     df_test = pd.read_parquet(DATA_DIR / "test.parquet")
 
-    val_ds = EditaisDataset(df_val, vocab, max_len=128)
-    test_ds = EditaisDataset(df_test, vocab, max_len=128)
+    val_ds = EditaisDataset(df_val["texto"].tolist(), df_val["categoria"].tolist(), vocab, max_len=200)
+    test_ds = EditaisDataset(df_test["texto"].tolist(), df_test["categoria"].tolist(), vocab, max_len=200)
 
-    # 4. Avaliação na Validação
     y_val_true, y_val_pred, _ = avaliar_conjunto(model, val_ds, classes_nomes)
     val_acc = accuracy_score(y_val_true, y_val_pred)
     val_f1 = f1_score(y_val_true, y_val_pred, average="macro", zero_division=0)
 
-    # 5. Avaliação no TESTE RESERVADO (Abertura oficial)
     y_test_true, y_test_pred, test_probs = avaliar_conjunto(model, test_ds, classes_nomes)
     test_acc = accuracy_score(y_test_true, y_test_pred)
     test_f1 = f1_score(y_test_true, y_test_pred, average="macro", zero_division=0)
@@ -139,7 +132,6 @@ def executar_avaliacao_completa():
     print(f"   • F1-Score Ponderado:      {test_f1_weighted:.4f}")
     print("-" * 65)
 
-    # 6. Carrega o Baseline anterior para comparar lado a lado
     baseline_path = METRICS_DIR / "baseline.json"
     if baseline_path.exists():
         with open(baseline_path, "r", encoding="utf-8") as f:
@@ -149,7 +141,6 @@ def executar_avaliacao_completa():
         print(f"   • Rede Neural (PyTorch):      Acurácia = {val_acc*100:.2f}% | F1-Macro = {val_f1:.4f}")
         print("-" * 65)
 
-    # 7. Relatório Detalhado de Classificação no Teste
     print("[*] Relatório Detalhado por Classe no Teste:")
     relatorio = classification_report(
         y_test_true,
@@ -160,54 +151,41 @@ def executar_avaliacao_completa():
     )
     print(relatorio)
 
-    # 8. Gera a Matriz de Confusão em Imagem
     cm_path = FIGURES_DIR / "confusion_matrix.png"
     plotar_matriz_confusao(y_test_true, y_test_pred, classes_nomes, cm_path)
-    print(f"[OK] Imagem da Matriz de Confusão salva em: {cm_path}")
+    print(f"[OK] Matriz de confusão salva em: {cm_path}")
 
-    # 9. Análise Qualitativa de Erros
+    # Análise Qualitativa de Erros
     erros = []
-    for idx, (real, pred) in enumerate(zip(y_test_true, y_test_pred)):
+    textos_teste = df_test["texto"].tolist()
+    for i in range(len(y_test_true)):
+        real = classes_nomes[y_test_true[i]]
+        pred = classes_nomes[y_test_pred[i]]
+        confianca = float(test_probs[i][y_test_pred[i]])
+
         if real != pred:
-            doc_info = df_test.iloc[idx]
             erros.append({
-                "arquivo": doc_info["arquivo"],
-                "classe_real": ID_TO_LABEL[real],
-                "classe_predita": ID_TO_LABEL[pred],
-                "confianca_predita": float(test_probs[idx][pred]),
-                "trecho_texto": doc_info["texto"][:250] + "...",
-                "hipotese_do_erro": "Vocabulário com termos de cabeçalho compartilhados ou presença de expressões de ambas as categorias."
+                "indice": i,
+                "classe_real": real,
+                "classe_predita": pred,
+                "confianca_predicao": round(confianca, 4),
+                "distribuicao_completa": {classes_nomes[j]: round(float(test_probs[i][j]), 4) for j in range(len(classes_nomes))},
+                "trecho_documento": textos_teste[i][:250] + "..."
             })
 
     error_analysis_path = METRICS_DIR / "error_analysis.json"
     with open(error_analysis_path, "w", encoding="utf-8") as f:
-        json.dump(erros, f, indent=2, ensure_ascii=False)
+        json.dump({
+            "total_testes": len(y_test_true),
+            "total_erros": len(erros),
+            "acuracia_teste": round(test_acc, 4),
+            "f1_macro_teste": round(test_f1, 4),
+            "f1_ponderado_teste": round(test_f1_weighted, 4),
+            "erros_detalhados": erros
+        }, f, indent=2, ensure_ascii=False)
 
-    print("-" * 65)
-    print(f"🔍 ANÁLISE QUALITATIVA DE ERROS ({len(erros)} erros identificados no Teste):")
-    if erros:
-        for e in erros:
-            print(f" • Arquivo: {e['arquivo']}")
-            print(f"   Esperado: [{e['classe_real']}] | IA chutou: [{e['classe_predita']}] (Confiança: {e['confianca_predita']*100:.1f}%)")
-            print(f"   Trecho: \"{e['trecho_texto'][:100]}...\"")
-    else:
-        print(" 🎉 Nenhum erro no teste reservado!")
-
-    print(f"[OK] Relatório completo de erros salvo em: {error_analysis_path}")
+    print(f"[OK] Análise de erros salva em: {error_analysis_path}")
     print("=" * 65)
-
-    # 10. Salva métricas finais consolidadas
-    metrics_final = {
-        "modelo": "TextClassifier (PyTorch)",
-        "test_accuracy": float(test_acc),
-        "test_f1_macro": float(test_f1),
-        "test_f1_weighted": float(test_f1_weighted),
-        "val_accuracy": float(val_acc),
-        "val_f1_macro": float(val_f1),
-        "total_erros_teste": len(erros)
-    }
-    with open(METRICS_DIR / "test_evaluation.json", "w", encoding="utf-8") as f:
-        json.dump(metrics_final, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":

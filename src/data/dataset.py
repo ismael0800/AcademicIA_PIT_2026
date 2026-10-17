@@ -1,6 +1,6 @@
 """
 Pipeline de Dados em PyTorch: Dataset, Vocabulário e DataLoaders (AcademicIA).
-Transforma textos limpos em tensores com controle determinístico de seed e batch.
+Limpeza inteligente de cabeçalhos institucionais, tokenização n-gram e aumento de dados.
 """
 import sys
 import io
@@ -26,7 +26,6 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
 SEED = 42
 
-# Mapeamento oficial das 6 classes para IDs numéricos
 LABEL_TO_ID = {
     "edital": 0,
     "homologacao": 1,
@@ -45,20 +44,42 @@ def fixar_seed(seed: int = 42):
     torch.manual_seed(seed)
 
 
+def limpar_documento(t: str) -> str:
+    """
+    Remove ruído institucional repetitivo (UFPI, Ministério, CEP, telefones, números longos)
+    para evidenciar o título, tipo e objetivo do documento.
+    """
+    if not isinstance(t, str):
+        return ""
+    t = re.sub(r"[\r\n\t]+", " ", t)
+    # Remove padrões genéricos de cabeçalho institucional comum a todos os editais
+    t = re.sub(r"(?i)minist[eé]rio da educa[cç][aã]o", "", t)
+    t = re.sub(r"(?i)universidade federal do piau[ií]", "", t)
+    t = re.sub(r"(?i)campus universit[aá]rio petr[oô]nio portella", "", t)
+    t = re.sub(r"(?i)bairro ininga", "", t)
+    t = re.sub(r"(?i)teresina\s*[-–]\s*pi", "", t)
+    t = re.sub(r"(?i)cep:?\s*[\d.-]+", "", t)
+    t = re.sub(r"(?i)e-?mail:?\s*[\w@.-]+", "", t)
+    t = re.sub(r"(?i)telefone:?\s*[\d() -]+", "", t)
+    t = re.sub(r"\b\d{4,}\b", "", t)  # Remove números longos (CPFs, matrículas, inscrições de tabela)
+    t = re.sub(r"\s{2,}", " ", t)
+    return t.strip()
+
+
 def tokenizar(texto: str) -> list[str]:
-    """Tokenizador simples por palavras em minúsculo."""
-    if not isinstance(texto, str):
-        return []
-    palavras = re.findall(r"\b\w+\b", texto.lower())
+    """Tokenizador focado em palavras semânticas com 2 ou mais letras."""
+    texto_limpo = limpar_documento(texto)
+    palavras = re.findall(r"\b[a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ]{2,}\b", texto_limpo.lower())
     return palavras
 
 
 class Vocabulary:
     """Vocabulário construído exclusivamente com os dados de TREINO."""
-    def __init__(self, max_size: int = 2500):
+    def __init__(self, max_size: int = 2500, min_freq: int = 2):
         self.pad_token = "<pad>"
         self.unk_token = "<unk>"
         self.max_size = max_size
+        self.min_freq = min_freq
         
         self.w2i = {self.pad_token: 0, self.unk_token: 1}
         self.i2w = {0: self.pad_token, 1: self.unk_token}
@@ -68,18 +89,16 @@ class Vocabulary:
         for t in texts:
             counter.update(tokenizar(t))
         
-        # Pega as palavras mais frequentes até o limite
         mais_comuns = counter.most_common(self.max_size - 2)
-        for palavra, _ in mais_comuns:
-            if palavra not in self.w2i:
+        for palavra, freq in mais_comuns:
+            if freq >= self.min_freq and palavra not in self.w2i:
                 idx = len(self.w2i)
                 self.w2i[palavra] = idx
                 self.i2w[idx] = palavra
 
-    def encode(self, texto: str, max_len: int = 128) -> list[int]:
+    def encode(self, texto: str, max_len: int = 200) -> list[int]:
         palavras = tokenizar(texto)
         ids = [self.w2i.get(p, self.w2i[self.unk_token]) for p in palavras[:max_len]]
-        # Padding até max_len
         if len(ids) < max_len:
             ids += [self.w2i[self.pad_token]] * (max_len - len(ids))
         return ids
@@ -99,10 +118,10 @@ class Vocabulary:
 
 
 class EditaisDataset(Dataset):
-    """Dataset PyTorch para carregar documentos da pós-graduação."""
-    def __init__(self, df: pd.DataFrame, vocab: Vocabulary, max_len: int = 128):
-        self.textos = df["texto"].tolist()
-        self.categorias = df["categoria"].tolist()
+    """Dataset PyTorch para documentos com suporte a augmentation."""
+    def __init__(self, textos: list[str], categorias: list[str], vocab: Vocabulary, max_len: int = 200):
+        self.textos = textos
+        self.categorias = categorias
         self.vocab = vocab
         self.max_len = max_len
 
@@ -119,11 +138,9 @@ class EditaisDataset(Dataset):
         return torch.tensor(token_ids, dtype=torch.long), torch.tensor(label_id, dtype=torch.long)
 
 
-def criar_dataloaders(batch_size: int = 8, max_len: int = 128):
+def criar_dataloaders(batch_size: int = 8, max_len: int = 200):
     """
-    Cria DataLoaders para Treino, Validação e Teste:
-      - Treino: shuffle=True (embaralha a cada época)
-      - Validação e Teste: shuffle=False (avaliação estável e determinística)
+    Cria DataLoaders para Treino, Validação e Teste com Aumento de Dados Inteligente.
     """
     fixar_seed(SEED)
     
@@ -132,13 +149,29 @@ def criar_dataloaders(batch_size: int = 8, max_len: int = 128):
     df_test = pd.read_parquet(CURATED_DIR / "test.parquet")
 
     # Vocabulário construído ESTRITAMENTE com os textos de treino
-    vocab = Vocabulary(max_size=2500)
+    vocab = Vocabulary(max_size=2500, min_freq=2)
     vocab.build_from_texts(df_train["texto"].tolist())
     vocab.save(MODELS_DIR / "vocab.json")
 
-    train_ds = EditaisDataset(df_train, vocab, max_len=max_len)
-    val_ds = EditaisDataset(df_val, vocab, max_len=max_len)
-    test_ds = EditaisDataset(df_test, vocab, max_len=max_len)
+    # Data Augmentation no Treino (janelas deslizantes para robustez a deslocamentos)
+    train_textos, train_cats = [], []
+    for texto, cat in zip(df_train["texto"], df_train["categoria"]):
+        train_textos.append(texto)
+        train_cats.append(cat)
+        
+        tokens = tokenizar(texto)
+        # Variação 1: início ligeiramente deslocado (pula introdução)
+        if len(tokens) > 40:
+            train_textos.append(" ".join(tokens[15:]))
+            train_cats.append(cat)
+        # Variação 2: início a partir do corpo
+        if len(tokens) > 70:
+            train_textos.append(" ".join(tokens[30:]))
+            train_cats.append(cat)
+
+    train_ds = EditaisDataset(train_textos, train_cats, vocab, max_len=max_len)
+    val_ds = EditaisDataset(df_val["texto"].tolist(), df_val["categoria"].tolist(), vocab, max_len=max_len)
+    test_ds = EditaisDataset(df_test["texto"].tolist(), df_test["categoria"].tolist(), vocab, max_len=max_len)
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
@@ -149,11 +182,7 @@ def criar_dataloaders(batch_size: int = 8, max_len: int = 128):
 
 @torch.inference_mode()
 def avaliar_modelo(model, loader, loss_fn):
-    """
-    Função de avaliação isolada:
-    - model.eval() desliga dropout;
-    - torch.inference_mode() impede o cálculo de gradientes e economiza memória.
-    """
+    """Função de avaliação isolada em modo de inferência."""
     model.eval()
     total_loss = 0.0
     corretos = 0
@@ -178,27 +207,26 @@ def testar_pipeline():
     batch_size = 8
     train_loader, val_loader, test_loader, vocab = criar_dataloaders(batch_size=batch_size)
 
-    print(f"[OK] 1. Vocabulario construído com dados de treino:")
+    print(f"[OK] 1. Vocabulário construído com dados de treino:")
     print(f"        • Tamanho do vocabulário: {len(vocab.w2i)} palavras únicas")
     print(f"        • Arquivo salvo em: models/vocab.json")
     print("-" * 60)
 
-    print(f"[OK] 2. Configuracao dos DataLoaders (Batch size = {batch_size}):")
-    print(f"        • Train Loader:      {len(train_loader.dataset)} docs em {len(train_loader)} batches (shuffle=True)")
-    print(f"        • Validation Loader: {len(val_loader.dataset)} docs em {len(val_loader)} batches (shuffle=False)")
-    print(f"        • Test Loader:       {len(test_loader.dataset)} docs em {len(test_loader)} batches (shuffle=False)")
+    print(f"[OK] 2. Configuração dos DataLoaders (Batch size = {batch_size}):")
+    print(f"        • Train Loader (com Augmentation): {len(train_loader.dataset)} docs em {len(train_loader)} batches")
+    print(f"        • Validation Loader:              {len(val_loader.dataset)} docs em {len(val_loader)} batches")
+    print(f"        • Test Loader:                    {len(test_loader.dataset)} docs em {len(test_loader)} batches")
     print("-" * 60)
 
-    # Inspeciona um batch real extraído do train_loader
     for X_batch, y_batch in train_loader:
-        print("[*] 3. Inspecao de 1 Batch Real:")
-        print(f"        • Shape dos tensores X: {list(X_batch.shape)} [Batch={X_batch.shape[0]}, Tokens={X_batch.shape[1]}]")
+        print("[*] 3. Inspeção de 1 Batch Real:")
+        print(f"        • Shape dos tensores X: {list(X_batch.shape)}")
         print(f"        • Shape dos rótulos y:  {list(y_batch.shape)}")
-        print(f"        • Exemplos de classes no lote: {[ID_TO_LABEL[i.item()] for i in y_batch[:4]]}")
+        print(f"        • Exemplos de classes:  {[ID_TO_LABEL[i.item()] for i in y_batch[:4]]}")
         break
 
     print("-" * 60)
-    print("🎉 Pipeline de Dados e DataLoader funcionando com determinismo (Seed=42)!")
+    print("🎉 Pipeline de Dados e DataLoader funcionando com determinismo!")
 
 
 if __name__ == "__main__":

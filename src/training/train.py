@@ -1,13 +1,12 @@
 """
-Script de Treinamento Completo em PyTorch com MLflow, Checkpoints e Early Stopping (AcademicIA).
-Treina a rede TextClassifier nos dados da UFPI, monitora a validação e salva o modelo best.pt.
+Script de Treinamento em PyTorch com MLflow, Checkpoints e Early Stopping (AcademicIA).
+Treina a rede híbrida TextClassifier (Conv1D + Self-Attention Pooling) nos dados do Piauí.
 """
 import sys
 import io
 import json
 from pathlib import Path
 
-# Garante que a raiz do projeto esteja no sys.path
 ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -38,12 +37,13 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def treinar_experimento(
-    lr: float = 0.001,
+    lr: float = 0.002,
     batch_size: int = 8,
-    embedding_dim: int = 64,
-    hidden_dim: int = 64,
-    epochs: int = 25,
-    patience: int = 6,
+    embedding_dim: int = 128,
+    hidden_dim: int = 96,
+    num_filters: int = 48,
+    epochs: int = 35,
+    patience: int = 12,
     exp_name: str = "AcademicIA_Treinamento",
     run_name: str = "run_padrao"
 ):
@@ -51,28 +51,29 @@ def treinar_experimento(
     device = torch.device("cpu")
 
     print(f"\n{'='*65}")
-    print(f"[*] INICIANDO EXPERIMENTO: {run_name} (lr={lr}, emb={embedding_dim})")
+    print(f"[*] INICIANDO EXPERIMENTO: {run_name} (lr={lr}, emb={embedding_dim}, filters={num_filters})")
     print(f"{'='*65}")
 
-    # 1. Carrega os DataLoaders (Treino e Validação)
-    train_loader, val_loader, test_loader, vocab = criar_dataloaders(batch_size=batch_size)
+    # 1. Carrega os DataLoaders (com data augmentation e vocabulário semântico)
+    train_loader, val_loader, test_loader, vocab = criar_dataloaders(batch_size=batch_size, max_len=200)
     vocab_size = len(vocab.w2i)
     num_classes = 6
 
-    # 2. Instancia o modelo
+    # 2. Instancia a arquitetura híbrida
     model = TextClassifier(
         vocab_size=vocab_size,
         embedding_dim=embedding_dim,
         hidden_dim=hidden_dim,
         num_classes=num_classes,
-        dropout_prob=0.2
+        dropout_prob=0.25,
+        num_filters=num_filters
     ).to(device)
 
-    # 3. Loss (CrossEntropy) e Otimizador (AdamW)
-    loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
+    # 3. Loss com label smoothing e Otimizador AdamW com Cosine Annealing
+    loss_fn = nn.CrossEntropyLoss(label_smoothing=0.05)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
 
-    # Histórico de métricas
     history = {
         "train_loss": [],
         "val_loss": [],
@@ -84,7 +85,6 @@ def treinar_experimento(
     melhor_epoca = 0
     epocas_sem_melhora = 0
 
-    # Configuração do MLflow
     mlflow.set_experiment(exp_name)
     with mlflow.start_run(run_name=run_name):
         mlflow.log_params({
@@ -92,15 +92,15 @@ def treinar_experimento(
             "batch_size": batch_size,
             "embedding_dim": embedding_dim,
             "hidden_dim": hidden_dim,
+            "num_filters": num_filters,
             "vocab_size": vocab_size,
             "num_classes": num_classes,
-            "optimizer": "AdamW",
-            "loss_function": "CrossEntropyLoss",
+            "architecture": "TextCNN + Self-Attention Pooling",
+            "optimizer": "AdamW + CosineAnnealing",
             "seed": 42
         })
 
         for epoch in range(1, epochs + 1):
-            # Fase de Treino
             model.train()
             train_loss_total = 0.0
 
@@ -112,15 +112,15 @@ def treinar_experimento(
                 loss = loss_fn(logits, y_batch)
                 loss.backward()
                 
-                # Clipping de gradiente para segurança numérica
                 torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
                 optimizer.step()
                 
                 train_loss_total += loss.item() * len(y_batch)
 
+            scheduler.step()
             train_loss = train_loss_total / len(train_loader.dataset)
 
-            # Fase de Validação (Inference Mode sem gradientes)
+            # Fase de Validação
             model.eval()
             val_loss_total = 0.0
             val_preds = []
@@ -146,25 +146,21 @@ def treinar_experimento(
             history["val_acc"].append(val_acc)
             history["val_f1"].append(val_f1)
 
-            # Registra no MLflow a cada época
             mlflow.log_metric("train_loss", train_loss, step=epoch)
             mlflow.log_metric("val_loss", val_loss, step=epoch)
             mlflow.log_metric("val_acc", val_acc, step=epoch)
             mlflow.log_metric("val_f1_macro", val_f1, step=epoch)
 
-            # Impressão do progresso
             if epoch % 2 == 0 or epoch == 1 or epoch == epochs:
                 print(f"Época {epoch:>2}/{epochs} | Treino Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Val Acc: {val_acc*100:>5.1f}% | Val F1: {val_f1:.4f}")
 
-            # Lógica de Checkpoint e Early Stopping
+            # Salva melhor checkpoint baseado em val_loss ou val_acc
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
                 melhor_epoca = epoch
                 epocas_sem_melhora = 0
                 
-                # Salva os pesos do melhor modelo
-                checkpoint_path = MODELS_DIR / f"best_{run_name}.pt"
-                torch.save({
+                checkpoint_data = {
                     "model_state_dict": model.state_dict(),
                     "epoch": epoch,
                     "val_loss": val_loss,
@@ -173,98 +169,77 @@ def treinar_experimento(
                     "vocab_size": vocab_size,
                     "embedding_dim": embedding_dim,
                     "hidden_dim": hidden_dim,
+                    "num_filters": num_filters,
                     "num_classes": num_classes
-                }, checkpoint_path)
+                }
                 
-                # Se for a run padrão, salva também como o best.pt principal
+                torch.save(checkpoint_data, MODELS_DIR / f"best_{run_name}.pt")
                 if run_name == "run_padrao":
-                    torch.save(torch.load(checkpoint_path), MODELS_DIR / "best.pt")
+                    torch.save(checkpoint_data, MODELS_DIR / "best.pt")
+                
+                print(f"   [+] Novo melhor modelo salvo! (Época {epoch} | Val Loss: {val_loss:.4f} | Val Acc: {val_acc*100:.1f}%)")
             else:
                 epocas_sem_melhora += 1
                 if epocas_sem_melhora >= patience:
-                    print(f"[*] Early Stopping acionado na época {epoch}! (Sem melhora por {patience} épocas)")
+                    print(f"\n[!] Early Stopping ativado na época {epoch} (sem melhora há {patience} épocas).")
                     break
 
-        print(f"[OK] Melhor Checkpoint salvo na Época {melhor_epoca} com Val Loss: {best_val_loss:.4f}")
-        mlflow.log_metric("best_val_loss", best_val_loss)
-        mlflow.log_metric("best_epoch", melhor_epoca)
-
-        # 4. Gera e salva o gráfico das curvas de aprendizado
-        fig_path = REPORTS_DIR / f"curvas_{run_name}.png"
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
-
-        ax1.plot(history["train_loss"], label="Treino (Train Loss)", color="#2563eb", linewidth=2)
-        ax1.plot(history["val_loss"], label="Validação (Val Loss)", color="#dc2626", linewidth=2)
-        ax1.set_title("Curva de Perda (CrossEntropy Loss)")
-        ax1.set_xlabel("Épocas")
-        ax1.set_ylabel("Loss")
-        ax1.legend()
-        ax1.grid(True, linestyle="--", alpha=0.6)
-
-        ax2.plot([acc * 100 for acc in history["val_acc"]], label="Acurácia (%)", color="#16a34a", linewidth=2)
-        ax2.plot([f1 * 100 for f1 in history["val_f1"]], label="F1-Score Macro (%)", color="#9333ea", linewidth=2)
-        ax2.set_title("Evolução das Métricas na Validação")
-        ax2.set_xlabel("Épocas")
-        ax2.set_ylabel("Porcentagem (%)")
-        ax2.legend()
-        ax2.grid(True, linestyle="--", alpha=0.6)
-
-        plt.tight_layout()
-        plt.savefig(fig_path, dpi=150)
-        plt.close()
-
-        # Salva o gráfico também como training_curves.png principal
-        if run_name == "run_padrao":
-            plt.figure()
-            import shutil
-            shutil.copy(fig_path, REPORTS_DIR / "training_curves.png")
-
-        mlflow.log_artifact(str(fig_path))
-        print(f"[OK] Gráfico das curvas salvo em: {fig_path}")
-
-    return {
-        "run_name": run_name,
-        "best_epoch": melhor_epoca,
-        "best_val_loss": best_val_loss,
-        "val_acc": max(history["val_acc"]),
-        "val_f1": max(history["val_f1"])
-    }
+        mlflow.log_artifact(str(MODELS_DIR / f"best_{run_name}.pt"))
+        print(f"\n[OK] Treinamento '{run_name}' concluído! Melhor época: {melhor_epoca} (Val Loss: {best_val_loss:.4f})")
+        return history
 
 
-def executar_bateria_experimentos():
-    print("[*] INICIANDO EXPERIMENTOS COMPARATIVOS NO MLFLOW...")
-    
-    # Run 1: Configuração Padrão (lr=0.001, emb=64)
-    res1 = treinar_experimento(
-        lr=0.001,
-        embedding_dim=64,
-        run_name="run_padrao",
-        epochs=25
-    )
+def gerar_grafico_curvas(history, filename="training_curves.png"):
+    plt.style.use("seaborn-v0_8-whitegrid" if "seaborn-v0_8-whitegrid" in plt.style.available else "default")
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
 
-    # Run 2: Hipótese de Taxa de Aprendizado Alta (lr=0.01)
-    res2 = treinar_experimento(
-        lr=0.01,
-        embedding_dim=64,
-        run_name="run_lr_alto",
-        epochs=20
-    )
+    epocas = range(1, len(history["train_loss"]) + 1)
 
-    # Run 3: Hipótese de Maior Capacidade Semântica (emb=128)
-    res3 = treinar_experimento(
-        lr=0.001,
+    # 1. Gráfico de Perda (Loss)
+    ax1.plot(epocas, history["train_loss"], label="Perda no Treino (Train Loss)", color="#2563eb", lw=2, marker="o", markersize=3)
+    ax1.plot(epocas, history["val_loss"], label="Perda na Validação (Val Loss)", color="#dc2626", lw=2, marker="s", markersize=3)
+    ax1.set_title("Evolução da Função de Perda (CrossEntropy)", fontsize=13, fontweight="bold", pad=12)
+    ax1.set_xlabel("Épocas", fontsize=11)
+    ax1.set_ylabel("Loss", fontsize=11)
+    ax1.legend(frameon=True, facecolor="white", edgecolor="#e2e8f0")
+    ax1.grid(True, linestyle="--", alpha=0.6)
+
+    # 2. Gráfico de Acurácia e F1-Score
+    ax2.plot(epocas, [a * 100 for a in history["val_acc"]], label="Acurácia de Validação (%)", color="#16a34a", lw=2, marker="^", markersize=3)
+    ax2.plot(epocas, [f * 100 for f in history["val_f1"]], label="F1-Score Macro (%)", color="#9333ea", lw=2, marker="d", markersize=3)
+    ax2.set_title("Evolução da Acurácia e F1-Score (Validação)", fontsize=13, fontweight="bold", pad=12)
+    ax2.set_xlabel("Épocas", fontsize=11)
+    ax2.set_ylabel("Percentual (%)", fontsize=11)
+    ax2.set_ylim(0, 105)
+    ax2.legend(frameon=True, facecolor="white", edgecolor="#e2e8f0")
+    ax2.grid(True, linestyle="--", alpha=0.6)
+
+    plt.tight_layout()
+    output_path = REPORTS_DIR / filename
+    plt.savefig(output_path, dpi=300)
+    plt.close()
+    print(f"[OK] Curvas de treinamento salvas em: {output_path}")
+
+
+def main():
+    print("=" * 65)
+    print("🚀 PIPELINE DE TREINAMENTO REFINADO - AcademicIA")
+    print("=" * 65)
+
+    hist_padrao = treinar_experimento(
+        lr=0.002,
+        batch_size=8,
         embedding_dim=128,
-        run_name="run_emb_128",
-        epochs=25
+        hidden_dim=96,
+        num_filters=48,
+        epochs=35,
+        patience=12,
+        run_name="run_padrao"
     )
 
-    print("\n" + "="*65)
-    print("📊 RESUMO DOS 3 EXPERIMENTOS NO MLFLOW:")
-    print("="*65)
-    for r in [res1, res2, res3]:
-        print(f" • {r['run_name']:<15} | Melhor Época: {r['best_epoch']:>2} | Val Loss: {r['best_val_loss']:.4f} | Acurácia Máx: {r['val_acc']*100:.1f}%")
-    print("="*65)
+    gerar_grafico_curvas(hist_padrao, "training_curves.png")
+    print("\n🎉 Treinamento refinado concluído com sucesso!")
 
 
 if __name__ == "__main__":
-    executar_bateria_experimentos()
+    main()
