@@ -22,6 +22,7 @@ models/*.onnx
 # Dados Brutos / Segredos
 .env
 data/raw/**/*.pdf
+data/scraped/**/*.pdf
 
 # Material de referência fornecido pelo professor
 Aurora_BR_Do_Zero_Aprimorada/

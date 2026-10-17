@@ -1,0 +1,27 @@
+{
+  "faculdade": "UESPI",
+  "curso": "PROPPPGL - PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS",
+  "pasta_curso": "PROPPPGL_-_PROGRAMA_DE_POS-GRADUACAO_EM_LETRAS",
+  "nivel": "MESTRADO",
+  "cidade": "TERESINA",
+  "arquivo_pdf": "Regimento_do_Programa_de_Pos-Graduacao_em_Letras.pdf",
+  "caminho_relativo": "data/scraped/UESPI/PROPPPGL_-_PROGRAMA_DE_POS-GRADUACAO_EM_LETRAS/Regimento_do_Programa_de_Pos-Graduacao_em_Letras.pdf",
+  "tamanho_bytes": 282738,
+  "url_documento": "https://sigaa.uespi.br/sigaa/verProducao?idProducao=351220&key=46d7e5298f6d09fda765087ee77df09d",
+  "url_portal": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3487",
+  "data_coleta": "2026-10-17T14:52:21.086867",
+  "classificacao_ia": {
+    "classe_predita": "edital",
+    "confianca_percentual": 43.99,
+    "paginas": 28,
+    "distribuicao_probabilidades": {
+      "edital": 43.99,
+      "homologacao": 2.7,
+      "recurso": 2.35,
+      "resultado": 6.94,
+      "aviso": 23.79,
+      "retificacao": 20.22
+    },
+    "trecho_inicial": "UNIVERSIDADE ESTADUAL DO PIAUÍ PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS MESTRADO E DOUTORADO ANEXO DA RESOLUÇÃO CEPEX Nº 43/2022 REGIMENTO DO PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS TÍTULO I DA NATUREZA E OBJETIVOS Art..."
+  }
+}

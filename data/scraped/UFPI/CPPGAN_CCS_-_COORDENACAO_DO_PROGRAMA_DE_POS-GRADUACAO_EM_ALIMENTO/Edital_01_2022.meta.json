@@ -1,0 +1,27 @@
+{
+  "faculdade": "UFPI",
+  "curso": "CPPGAN/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ALIMENTOS E NUTRIÇÃO/CCS",
+  "pasta_curso": "CPPGAN_CCS_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ALIMENTO",
+  "nivel": "DOUTORADO/MESTRADO",
+  "cidade": "Teresina",
+  "arquivo_pdf": "Edital_01_2022.pdf",
+  "caminho_relativo": "data/scraped/UFPI/CPPGAN_CCS_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ALIMENTO/Edital_01_2022.pdf",
+  "tamanho_bytes": 365606,
+  "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=4730255&key=31635b7fc3eddd71d6dd24ddf9a36dca",
+  "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=364",
+  "data_coleta": "2026-10-17T14:48:55.982208",
+  "classificacao_ia": {
+    "classe_predita": "edital",
+    "confianca_percentual": 46.82,
+    "paginas": 17,
+    "distribuicao_probabilidades": {
+      "edital": 46.82,
+      "homologacao": 5.07,
+      "recurso": 3.83,
+      "resultado": 7.56,
+      "aviso": 18.93,
+      "retificacao": 17.78
+    },
+    "trecho_inicial": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM ALIMENTOS E NUTRIÇÃO Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piauí,..."
+  }
+}

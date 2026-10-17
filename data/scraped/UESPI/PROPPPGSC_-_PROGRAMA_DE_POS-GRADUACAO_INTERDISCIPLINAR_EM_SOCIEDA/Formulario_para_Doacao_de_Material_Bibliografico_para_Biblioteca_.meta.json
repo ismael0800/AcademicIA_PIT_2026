@@ -1,0 +1,27 @@
+{
+  "faculdade": "UESPI",
+  "curso": "PROPPPGSC - PROGRAMA DE PÓS-GRADUAÇÃO INTERDISCIPLINAR EM SOCIEDADE E CULTURA",
+  "pasta_curso": "PROPPPGSC_-_PROGRAMA_DE_POS-GRADUACAO_INTERDISCIPLINAR_EM_SOCIEDA",
+  "nivel": "MESTRADO",
+  "cidade": "TERESINA",
+  "arquivo_pdf": "Formulario_para_Doacao_de_Material_Bibliografico_para_Biblioteca_.pdf",
+  "caminho_relativo": "data/scraped/UESPI/PROPPPGSC_-_PROGRAMA_DE_POS-GRADUACAO_INTERDISCIPLINAR_EM_SOCIEDA/Formulario_para_Doacao_de_Material_Bibliografico_para_Biblioteca_.pdf",
+  "tamanho_bytes": 128782,
+  "url_documento": "https://sigaa.uespi.br/sigaa/verProducao?idProducao=73821&key=8b0f63a83501ec9971cb308744e5615c",
+  "url_portal": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3491",
+  "data_coleta": "2026-10-17T14:52:23.205465",
+  "classificacao_ia": {
+    "classe_predita": "edital",
+    "confianca_percentual": 34.87,
+    "paginas": 1,
+    "distribuicao_probabilidades": {
+      "edital": 34.87,
+      "homologacao": 3.71,
+      "recurso": 4.87,
+      "resultado": 11.87,
+      "aviso": 26.2,
+      "retificacao": 18.48
+    },
+    "trecho_inicial": "GOVERNO DO ESTADO DO PIAUÍ UNIVERSIDADE ESTADUAL DO PIAUÍ - UESPI BIBLIOTECA CENTRAL FORMULÁRIO PARA DOAÇÃO DE MATERIAL BIBLIOGRÁFICO Eu, __________________________________________________________________ _____________________________________________..."
+  }
+}

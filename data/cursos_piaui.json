@@ -1,0 +1,508 @@
+{
+  "UESPI": [
+    {
+      "curso": "PROFLETRASPHB - MESTRADO PROFISSIONAL EM LETRAS - CAMPUS PARNAÍBA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3853",
+      "nivel": "MESTRADO",
+      "cidade": "PARNAÍBA"
+    },
+    {
+      "curso": "PROPMNPEF - PROGRAMA NACIONAL DE MESTRADO PROFISSIONAL EM ENSINO DE FÍSICA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3827",
+      "nivel": "MESTRADO",
+      "cidade": "PIRIPIRI"
+    },
+    {
+      "curso": "PROPMPBIOTEC - PROGRAMA DE PÓS-GRADUAÇÃO EM BIOTECNOLOGIA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3488",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "FORTALEZA"
+    },
+    {
+      "curso": "PROPPPGL - PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3487",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPPGQ - MESTRADO ACADÊMICO EM QUÍMICA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3489",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPPGSC - PROGRAMA DE PÓS-GRADUAÇÃO INTERDISCIPLINAR EM SOCIEDADE E CULTURA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3491",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPROEF - MESTRADO PROFISSIONAL EM REDE EM EDUCAÇÃO FÍSICA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3828",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPROFBIO - MESTRADO PROFISSIONAL EM BIOLOGIA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3492",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPROFHIST - PROGRAMA DE PÓS-GRADUAÇÃO EM ENSINO DE HISTÓRIA - PARNAÍBA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3758",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "PARNAÍBA"
+    },
+    {
+      "curso": "PROPPROFLETRAS - MESTRADO PROFISSIONAL EM LETRAS",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3493",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPROFMAT - MESTRADO PROFISSIONAL EM MATEMÁTICA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3494",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    },
+    {
+      "curso": "PROPPROSAUDE - MESTRADO PROFISSIONAL EM SAÚDE DA FAMÍLIA",
+      "link": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3829",
+      "nivel": "MESTRADO",
+      "cidade": "TERESINA"
+    }
+  ],
+  "UFPI": [
+    {
+      "curso": "CPPGAF/CPCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA – FITOTECNIA/CPCE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=373",
+      "nivel": "MESTRADO",
+      "cidade": "Bom Jesus"
+    },
+    {
+      "curso": "CPPGAN/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ALIMENTOS E NUTRIÇÃO/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=364",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGANTRO/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ANTROPOLOGIA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=342",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGAPV/CCA - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA – PRODUÇÃO VEGETAL/CCA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=341",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "DESATIVADO"
+    },
+    {
+      "curso": "CPPGARQ/CCN - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ARQUEOLOGIA/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=616",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCA/CCA - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA ANIMAL/CCA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=368",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCC/CCN - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA DA COMPUTAÇÃO/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=615",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCFAR/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=606",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCM - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA E ENGENHARIA DOS MATERIAIS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=610",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCOM/CCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM COMUNICAÇÃO/CCE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=369",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCP2019 - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA POLÍTICA - APCN2019",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1083",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGCP/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA POLÍTICA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=343",
+      "nivel": "MESTRADO",
+      "cidade": "DESATIVADO"
+    },
+    {
+      "curso": "CPPGCS/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS E SAÚDE/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=344",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGED/CCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM EDUCAÇÃO/CCE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=609",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGEE/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ÉTICA E EPISTEMOLOGIA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=346",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGENF/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ENFERMAGEM/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=345",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGFARM/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM FARMACOLOGIA/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=608",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGF/CCN - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM FÍSICA/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=307",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGG/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM GEOGRAFIA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=372",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGHB/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM HISTÓRIA DO BRASIL/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=347",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGMAT/CCN - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM MATEMÁTICA-ACADÊMICO/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=366",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGM/CCA - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM GENÉTICA E MELHORAMENTO/CCA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=367",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGO/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ODONTOLOGIA/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=370",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGQ/CCN - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM QUÍMICA/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=146",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGSNP/CPCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA – SOLOS E NUTRIÇÃO DE PLANTAS/CPCE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=612",
+      "nivel": "MESTRADO",
+      "cidade": "Bom Jesus"
+    },
+    {
+      "curso": "CPPGZOO/CPCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ZOOTECNIA/CPCE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=607",
+      "nivel": "MESTRADO",
+      "cidade": "Bom Jesus"
+    },
+    {
+      "curso": "CPROFMAT/CCN - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM MATEMÁTICA-PROFISSIONAL/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=618",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "DDMA/PRPG - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM DESENVOLVIMENTO E MEIO AMBIENTE - EM REDE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=619",
+      "nivel": "DOUTORADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "MNPEF-UFPI - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ENSINO DE FÍSICA - MESTRADO PROFISSIONAL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=832",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "MPF - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM FILOSOFIA - MESTRADO PROFISSIONAL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=977",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "MPGP - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM GESTÃO PÚBLICA - MESTRADO PROFISSIONAL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=949",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "MPSM - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE DA MULHER - MESTRADO PROFISSIONAL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=897",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "MSC/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE E COMUNIDADE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=926",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PESQ.IN/UFDPAR - PESQUISA-INOVAÇÃO/UFDPAR",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1343",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "PPGA/CCA - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA/CCA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1096",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGBC/CAFS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM BIODIVERSIDADE E CONSERVAÇÃO/CAFS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1116",
+      "nivel": "MESTRADO",
+      "cidade": "Floriano"
+    },
+    {
+      "curso": "PPGCA/CPCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS AGRÁRIAS/CPCE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1072",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Bom Jesus"
+    },
+    {
+      "curso": "PPGCCDA - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA DA COMPUTAÇÃO - DOUTORADO EM ASSOCIAÇÃO UFMA E UFPI",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1080",
+      "nivel": "DOUTORADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGCMov/CCS - PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS DO MOVIMENTO - PPGCMOV/CCS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1260",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGD/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM DIREITO/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1082",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGDMA/PRPG - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM DESENVOLVIMENTO E MEIO AMBIENTE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=340",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGE/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ECONOMIA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1366",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGEE/CT - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ENGENHARIA ELÉTRICA/CT",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=958",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGEnCiNa/CCN - PROGRAMA DE PÓS-GRADUAÇÃO EM ENSINO DE CIÊNCIAS DA NATUREZA - PPGENCINA/CCN",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1371",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGFIL/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM FILOSOFIA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=956",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGFIS - COORDENAÇÃO DO PROGRAMA MULTICÊNTRICO DE PÓS-GRADUAÇÃO EM CIÊNCIAS FISIOLÓGICAS EM ASSOCIAÇÃO COM A SOCIEDADE BRASILEIRA DE FISIOLOGIA - SBFIS",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1251",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGPP/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM POLÍTICAS PÚBLICAS/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=251",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGPS/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM PATRIMÔNIO E SOCIEDADE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1398",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "PPGS/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM SOCIOLOGIA/CCHL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=614",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGSF - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE DA FAMÍLIA - RENASF",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=794",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGTAIR/CCA - PROGRAMA DE PÓS-GRADUAÇÃO EM TECNOLOGIAS APLICADAS A ANIMAIS DE INTERESSE REGIONAL/CCA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1074",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PPGZT/CCA - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ZOOTECNIA TROPICAL-CCA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1097",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PROFAGUA-UFPI - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM GESTÃO E REGULAÇÃO DE RECURSOS HÍDRICOS – PROFAGUA-UFPI – MESTRADO PROFISSIONAL",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1338",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PROFIAP/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ADMINISTRAÇÃO PÚBLICA PROFISSIONAL (11.00.25.55)",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=968",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PROFMAT/PAR - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM MATEMÁTICA-PROFISSIONAL/PARNAÍBA",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=778",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "PROFNIT - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM PROPRIEDADE INTELECTUAL E TRANSFERÊNCIA DE TECNOLOGIA PARA A INOVAÇÃO",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1061",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "PROFSAUDECSHNB - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE DA FAMÍLIA - PROFSAÚDE/CSHNB",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1262",
+      "nivel": "MESTRADO",
+      "cidade": "Picos"
+    },
+    {
+      "curso": "RENORBIO - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM BIOTECNOLOGIA - RENORBIO",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=374",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "CPPGL/CCHL - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS/CCHL",
+      "link": "https://sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=348",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Teresina"
+    }
+  ],
+  "IFPI": [
+    {
+      "curso": "Mestrado Profissional em Engenharia de Materiais e Processos Industriais",
+      "link": "https://www.ifpi.edu.br/ppgem",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "Mestrado Profissional em Educação Profissional e Tecnológica (ProfEPT)",
+      "link": "https://www.ifpi.edu.br/profept",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaiba"
+    },
+    {
+      "curso": "Mestrado Profissional em Matemática em Rede Nacional (PROFMAT)",
+      "link": "https://www.ifpi.edu.br/profmat",
+      "nivel": "MESTRADO",
+      "cidade": "Floriano"
+    },
+    {
+      "curso": "Mestrado Profissional em Análise e Planejamento Espacial (MAPEPROF)",
+      "link": "https://www.ifpi.edu.br/mapeprof",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "Mestrado Profissional EM PROPRIEDADE INTELECTUAL-PPI",
+      "link": "https://www.ifpi.edu.br/ppi",
+      "nivel": "MESTRADO",
+      "cidade": "Teresina"
+    },
+    {
+      "curso": "Mestrado Nacional Profissional em Ensino de Física",
+      "link": "https://www.ifpi.edu.br/mnpef",
+      "nivel": "MESTRADO",
+      "cidade": "PICOS"
+    }
+  ],
+  "UFDPAR": [
+    {
+      "curso": "PROFIAP/UFDPAR - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ADMINISTRAÇÃO PÚBLICA – PROFIAP/UFDPAR",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1342",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "PPGAPM/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ARTES, PATRIMÔNIO E MUSEOLOGIA/CMRV",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=793",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "CPPGBIOTE/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM BIOTECNOLOGIA/CMRV",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=611",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "CPPGCBM/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS BIOMÉDICAS/CMRV",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=792",
+      "nivel": "DOUTORADO/MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "PPGPSI/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM PSICOLOGIA/CMRV",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=982",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    },
+    {
+      "curso": "PROFSAUDE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE DA FAMÍLIA - MESTRADO PROFISSIONAL - PROFSAÚDE",
+      "link": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=976",
+      "nivel": "MESTRADO",
+      "cidade": "Parnaíba"
+    }
+  ]
+}

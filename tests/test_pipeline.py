@@ -104,3 +104,38 @@ def test_checkpoint_reproducibility():
         temp_path.unlink()
 
     assert torch.allclose(out1, out2, atol=1e-6), "O modelo recarregado divergiu na inferência!"
+
+
+def test_scraped_data_hierarchy_and_sources():
+    """Valida a persistência estruturada dos cursos do Piauí e a hierarquia do scraper."""
+    import json
+
+    # 1. Valida banco de fontes oficial das 4 universidades
+    cursos_path = Path("data/cursos_piaui.json")
+    assert cursos_path.exists(), "data/cursos_piaui.json não foi encontrado"
+
+    with open(cursos_path, "r", encoding="utf-8") as f:
+        cursos = json.load(f)
+
+    assert set(cursos.keys()) == {"UESPI", "UFPI", "IFPI", "UFDPAR"}
+    total_cursos = sum(len(v) for v in cursos.values())
+    assert total_cursos == 83, f"Esperado 83 cursos, encontrado {total_cursos}"
+
+    # 2. Valida catálogo de scraping e hierarquia Faculdade > Curso
+    catalogo_path = Path("data/scraped/catalogo_documentos.json")
+    if catalogo_path.exists():
+        with open(catalogo_path, "r", encoding="utf-8") as f:
+            catalogo = json.load(f)
+
+        assert len(catalogo) > 0, "Catálogo de documentos coletados está vazio"
+        for doc in catalogo:
+            assert doc["faculdade"] in {"UESPI", "UFPI", "IFPI", "UFDPAR"}
+            assert "pasta_curso" in doc and doc["pasta_curso"]
+            assert "caminho_relativo" in doc
+            assert "classificacao_ia" in doc
+            # Garante que o caminho segue estritamente data/scraped/{faculdade}/{curso}/
+            partes = Path(doc["caminho_relativo"]).parts
+            assert partes[0] == "data" and partes[1] == "scraped"
+            assert partes[2] == doc["faculdade"]
+            assert partes[3] == doc["pasta_curso"]
+

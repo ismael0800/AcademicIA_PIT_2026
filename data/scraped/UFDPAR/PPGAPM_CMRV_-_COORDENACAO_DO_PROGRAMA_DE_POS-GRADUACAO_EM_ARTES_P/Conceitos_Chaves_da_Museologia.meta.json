@@ -1,0 +1,27 @@
+{
+  "faculdade": "UFDPAR",
+  "curso": "PPGAPM/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ARTES, PATRIMÔNIO E MUSEOLOGIA/CMRV",
+  "pasta_curso": "PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P",
+  "nivel": "MESTRADO",
+  "cidade": "Parnaíba",
+  "arquivo_pdf": "Conceitos_Chaves_da_Museologia.pdf",
+  "caminho_relativo": "data/scraped/UFDPAR/PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P/Conceitos_Chaves_da_Museologia.pdf",
+  "tamanho_bytes": 1369072,
+  "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=1368305&key=5835f57999b53b7bf1f8a7a6f3413f7f",
+  "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=793",
+  "data_coleta": "2026-10-17T14:51:48.528481",
+  "classificacao_ia": {
+    "classe_predita": "aviso",
+    "confianca_percentual": 19.84,
+    "paginas": 101,
+    "distribuicao_probabilidades": {
+      "edital": 18.62,
+      "homologacao": 12.79,
+      "recurso": 13.98,
+      "resultado": 16.21,
+      "aviso": 19.84,
+      "retificacao": 18.57
+    },
+    "trecho_inicial": "Conceitos-chave de museologia Sob a direção de André DESVALLÉES e François MAIRESSE"
+  }
+}

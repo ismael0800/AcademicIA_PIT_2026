@@ -1,0 +1,27 @@
+{
+  "faculdade": "UFDPAR",
+  "curso": "PPGAPM/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ARTES, PATRIMÔNIO E MUSEOLOGIA/CMRV",
+  "pasta_curso": "PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P",
+  "nivel": "MESTRADO",
+  "cidade": "Parnaíba",
+  "arquivo_pdf": "Codigo_Etica_Museus.pdf",
+  "caminho_relativo": "data/scraped/UFDPAR/PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P/Codigo_Etica_Museus.pdf",
+  "tamanho_bytes": 165083,
+  "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=1367361&key=a822d927c1d78afc8479201fa9d26d2e",
+  "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=793",
+  "data_coleta": "2026-10-17T14:51:46.935246",
+  "classificacao_ia": {
+    "classe_predita": "aviso",
+    "confianca_percentual": 34.7,
+    "paginas": 14,
+    "distribuicao_probabilidades": {
+      "edital": 32.1,
+      "homologacao": 1.92,
+      "recurso": 3.3,
+      "resultado": 11.42,
+      "aviso": 34.7,
+      "retificacao": 16.57
+    },
+    "trecho_inicial": "CÓDIGO DE ÉTICA PARA MUSEUS - ICOM O Código de Ética Profissional do ICOM foi aprovado por unanimidade na 15ª Assembléia Geral do ICOM realizada em Buenos Aires, Argentina, em 4 de novembro de 1986. Na 20ª Assembléia Geral realizada em Barcelona, Esp..."
+  }
+}

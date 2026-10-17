@@ -1,0 +1,337 @@
+[
+  {
+    "faculdade": "UFPI",
+    "curso": "CPPGAN/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ALIMENTOS E NUTRIÇÃO/CCS",
+    "pasta_curso": "CPPGAN_CCS_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ALIMENTO",
+    "nivel": "DOUTORADO/MESTRADO",
+    "cidade": "Teresina",
+    "arquivo_pdf": "Edital_01_2022.pdf",
+    "caminho_relativo": "data/scraped/UFPI/CPPGAN_CCS_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ALIMENTO/Edital_01_2022.pdf",
+    "tamanho_bytes": 365606,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=4730255&key=31635b7fc3eddd71d6dd24ddf9a36dca",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=364",
+    "data_coleta": "2026-10-17T14:48:55.982208",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 46.82,
+      "paginas": 17,
+      "distribuicao_probabilidades": {
+        "edital": 46.82,
+        "homologacao": 5.07,
+        "recurso": 3.83,
+        "resultado": 7.56,
+        "aviso": 18.93,
+        "retificacao": 17.78
+      },
+      "trecho_inicial": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM ALIMENTOS E NUTRIÇÃO Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piauí,..."
+    }
+  },
+  {
+    "faculdade": "UFPI",
+    "curso": "CPPGAN/CCS - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ALIMENTOS E NUTRIÇÃO/CCS",
+    "pasta_curso": "CPPGAN_CCS_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ALIMENTO",
+    "nivel": "DOUTORADO/MESTRADO",
+    "cidade": "Teresina",
+    "arquivo_pdf": "EDITAL_04_2019.pdf",
+    "caminho_relativo": "data/scraped/UFPI/CPPGAN_CCS_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ALIMENTO/EDITAL_04_2019.pdf",
+    "tamanho_bytes": 7086366,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=2951421&key=0031473f68a795f33ec0bdb6ac4c9e9a",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=364",
+    "data_coleta": "2026-10-17T14:48:57.106731",
+    "classificacao_ia": {
+      "classe_predita": "indeterminado",
+      "confianca_percentual": 0.0,
+      "paginas": 30,
+      "motivo": "pdf_sem_texto_extraivel"
+    }
+  },
+  {
+    "faculdade": "IFPI",
+    "curso": "Mestrado Profissional em Engenharia de Materiais e Processos Industriais",
+    "pasta_curso": "Mestrado_Profissional_em_Engenharia_de_Materiais_e_Processos_Indu",
+    "nivel": "MESTRADO",
+    "cidade": "Teresina",
+    "arquivo_pdf": "Corpo_Docente.pdf",
+    "caminho_relativo": "data/scraped/IFPI/Mestrado_Profissional_em_Engenharia_de_Materiais_e_Processos_Indu/Corpo_Docente.pdf",
+    "tamanho_bytes": 154663,
+    "url_documento": "https://www.ifpi.edu.br/ppgem/o-mestrado/ppgem-corpo-docente-31-10-2025.pdf",
+    "url_portal": "https://www.ifpi.edu.br/ppgem",
+    "data_coleta": "2026-10-17T14:49:20.182244",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 32.96,
+      "paginas": 2,
+      "distribuicao_probabilidades": {
+        "edital": 32.96,
+        "homologacao": 4.5,
+        "recurso": 4.14,
+        "resultado": 9.95,
+        "aviso": 29.31,
+        "retificacao": 19.15
+      },
+      "trecho_inicial": "RELAÇÃO DOS DOCENTES ORIENTADOR(A) GRADUAÇÃO ÁREA DE ATUAÇÃO LINK DO LATTES Ayrton de Sá Brandim Licenciatura em Mecânica Estrutura e Materiais http://lattes.cnpq.br/7812790324298875 Hudson Chagas dos Santos Engenharia Civil Estrutura e Materiais htt..."
+    }
+  },
+  {
+    "faculdade": "IFPI",
+    "curso": "Mestrado Profissional em Engenharia de Materiais e Processos Industriais",
+    "pasta_curso": "Mestrado_Profissional_em_Engenharia_de_Materiais_e_Processos_Indu",
+    "nivel": "MESTRADO",
+    "cidade": "Teresina",
+    "arquivo_pdf": "Regimento_Interno.pdf",
+    "caminho_relativo": "data/scraped/IFPI/Mestrado_Profissional_em_Engenharia_de_Materiais_e_Processos_Indu/Regimento_Interno.pdf",
+    "tamanho_bytes": 224390,
+    "url_documento": "https://www.ifpi.edu.br/ppgem/o-mestrado/ppgem_regimento-interno_consup0352017.pdf",
+    "url_portal": "https://www.ifpi.edu.br/ppgem",
+    "data_coleta": "2026-10-17T14:49:20.678213",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 32.05,
+      "paginas": 17,
+      "distribuicao_probabilidades": {
+        "edital": 32.05,
+        "homologacao": 3.21,
+        "recurso": 3.88,
+        "resultado": 14.25,
+        "aviso": 25.11,
+        "retificacao": 21.51
+      },
+      "trecho_inicial": "Ministério da Educação Instituto Federal de Educação, Ciência e Tecnologia do Piauí IFPI Av. Jânio Quadros, Santa Isabel, TERESINA / PI, CEP 64053-390 Fone: (86) 3131-1443 Site: www.ifpi.edu.br RESOLUÇÃO NORMATIVA CONSUP/OSUPCOL/REI/IFPI N° 210, de 1..."
+    }
+  },
+  {
+    "faculdade": "UFPI",
+    "curso": "CPPGAF/CPCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA – FITOTECNIA/CPCE",
+    "pasta_curso": "CPPGAF_CPCE_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_AGRONOM",
+    "nivel": "MESTRADO",
+    "cidade": "Bom Jesus",
+    "arquivo_pdf": "PROCESSO_SELETIVO_DE_BOLSAS_-_Planilha_de_Pontuacao_de_Curriculos.pdf",
+    "caminho_relativo": "data/scraped/UFPI/CPPGAF_CPCE_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_AGRONOM/PROCESSO_SELETIVO_DE_BOLSAS_-_Planilha_de_Pontuacao_de_Curriculos.pdf",
+    "tamanho_bytes": 59765,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=2426467&key=1d0b678ba9162e9cd513d0eb31b7b621",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=373",
+    "data_coleta": "2026-10-17T14:51:26.719835",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 30.08,
+      "paginas": 1,
+      "distribuicao_probabilidades": {
+        "edital": 30.08,
+        "homologacao": 3.51,
+        "recurso": 6.05,
+        "resultado": 17.74,
+        "aviso": 26.15,
+        "retificacao": 16.47
+      },
+      "trecho_inicial": "PLANILHA DE PONTUAÇÃO DE CURRÍCULOS DO PROCESSO SELETIVO DE BOLSAS (MESTRADO) DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS AGRÁRIAS - PPGCA Discente: _______________________________________________________ Data:________ Publicação Valor Quantidade Pontos..."
+    }
+  },
+  {
+    "faculdade": "UFPI",
+    "curso": "CPPGAF/CPCE - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA – FITOTECNIA/CPCE",
+    "pasta_curso": "CPPGAF_CPCE_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_AGRONOM",
+    "nivel": "MESTRADO",
+    "cidade": "Bom Jesus",
+    "arquivo_pdf": "Requerimento_de_diploma.pdf",
+    "caminho_relativo": "data/scraped/UFPI/CPPGAF_CPCE_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_AGRONOM/Requerimento_de_diploma.pdf",
+    "tamanho_bytes": 270299,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=2449676&key=7778decb26dc9f81197bbb38dc340bc6",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=373",
+    "data_coleta": "2026-10-17T14:51:28.311235",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 36.23,
+      "paginas": 1,
+      "distribuicao_probabilidades": {
+        "edital": 36.23,
+        "homologacao": 3.92,
+        "recurso": 3.77,
+        "resultado": 11.54,
+        "aviso": 25.13,
+        "retificacao": 19.4
+      },
+      "trecho_inicial": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO COORDENADORIA DE PROGRAMAS STRICTO SENSU SERVIÇO DE REGISTRO E CONTROLE ACADÊMICO DE PÓS-GRADUAÇÃO C I R C U L A Ç Ã O I N T E R N A R E Q U E R I M E N T O ..."
+    }
+  },
+  {
+    "faculdade": "UFDPAR",
+    "curso": "PROFIAP/UFDPAR - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ADMINISTRAÇÃO PÚBLICA – PROFIAP/UFDPAR",
+    "pasta_curso": "PROFIAP_UFDPAR_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ADMI",
+    "nivel": "MESTRADO",
+    "cidade": "Parnaíba",
+    "arquivo_pdf": "Portaria_Colegiado_03_2025.pdf",
+    "caminho_relativo": "data/scraped/UFDPAR/PROFIAP_UFDPAR_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ADMI/Portaria_Colegiado_03_2025.pdf",
+    "tamanho_bytes": 414077,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=6988482&key=380edd7f53002e45a88c8e4fa35bcc6a",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1342",
+    "data_coleta": "2026-10-17T14:51:43.332545",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 35.56,
+      "paginas": 1,
+      "distribuicao_probabilidades": {
+        "edital": 35.56,
+        "homologacao": 3.28,
+        "recurso": 4.63,
+        "resultado": 10.12,
+        "aviso": 27.78,
+        "retificacao": 18.62
+      },
+      "trecho_inicial": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO DELTA DO PARNAÍBA PRÓ-REITORIA DE PÓS-GRADUAÇÃO, PESQUISA E INOVAÇÃO PORTARIA N.º 007/2025 PROPOPI – UFDPar, DE 28 DE MARÇO DE 2025. O PRÓ-REITOR DE PÓS-GRADUAÇÃO, PESQUISA E INOVA ÇÃO DA UNIVERSIDADE FE..."
+    }
+  },
+  {
+    "faculdade": "UFDPAR",
+    "curso": "PROFIAP/UFDPAR - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ADMINISTRAÇÃO PÚBLICA – PROFIAP/UFDPAR",
+    "pasta_curso": "PROFIAP_UFDPAR_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ADMI",
+    "nivel": "MESTRADO",
+    "cidade": "Parnaíba",
+    "arquivo_pdf": "Portaria_Colegiado_09_2025.pdf",
+    "caminho_relativo": "data/scraped/UFDPAR/PROFIAP_UFDPAR_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ADMI/Portaria_Colegiado_09_2025.pdf",
+    "tamanho_bytes": 364363,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=6988484&key=414d448ef29c3140b85ce9eb365306cd",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=1342",
+    "data_coleta": "2026-10-17T14:51:44.226979",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 33.72,
+      "paginas": 2,
+      "distribuicao_probabilidades": {
+        "edital": 33.72,
+        "homologacao": 3.31,
+        "recurso": 4.68,
+        "resultado": 10.89,
+        "aviso": 28.9,
+        "retificacao": 18.5
+      },
+      "trecho_inicial": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO DELTA DO PARNAÍBA PRÓ-REITORIA DE PÓS-GRADUAÇÃO, PESQUISA E INOVAÇÃO PORTARIA N.º 016/2025 PROPOPI – UFDPar, DE 17 DE SETEMBRO DE 2025. O PRÓ-REITOR DE PÓS-GRADUAÇÃO, PESQUISA E INOVA ÇÃO DA UNIVERSIDADE..."
+    }
+  },
+  {
+    "faculdade": "UFDPAR",
+    "curso": "PPGAPM/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ARTES, PATRIMÔNIO E MUSEOLOGIA/CMRV",
+    "pasta_curso": "PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P",
+    "nivel": "MESTRADO",
+    "cidade": "Parnaíba",
+    "arquivo_pdf": "Codigo_Etica_Museus.pdf",
+    "caminho_relativo": "data/scraped/UFDPAR/PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P/Codigo_Etica_Museus.pdf",
+    "tamanho_bytes": 165083,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=1367361&key=a822d927c1d78afc8479201fa9d26d2e",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=793",
+    "data_coleta": "2026-10-17T14:51:46.935246",
+    "classificacao_ia": {
+      "classe_predita": "aviso",
+      "confianca_percentual": 34.7,
+      "paginas": 14,
+      "distribuicao_probabilidades": {
+        "edital": 32.1,
+        "homologacao": 1.92,
+        "recurso": 3.3,
+        "resultado": 11.42,
+        "aviso": 34.7,
+        "retificacao": 16.57
+      },
+      "trecho_inicial": "CÓDIGO DE ÉTICA PARA MUSEUS - ICOM O Código de Ética Profissional do ICOM foi aprovado por unanimidade na 15ª Assembléia Geral do ICOM realizada em Buenos Aires, Argentina, em 4 de novembro de 1986. Na 20ª Assembléia Geral realizada em Barcelona, Esp..."
+    }
+  },
+  {
+    "faculdade": "UFDPAR",
+    "curso": "PPGAPM/CMRV - COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM ARTES, PATRIMÔNIO E MUSEOLOGIA/CMRV",
+    "pasta_curso": "PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P",
+    "nivel": "MESTRADO",
+    "cidade": "Parnaíba",
+    "arquivo_pdf": "Conceitos_Chaves_da_Museologia.pdf",
+    "caminho_relativo": "data/scraped/UFDPAR/PPGAPM_CMRV_-_COORDENACAO_DO_PROGRAMA_DE_POS-GRADUACAO_EM_ARTES_P/Conceitos_Chaves_da_Museologia.pdf",
+    "tamanho_bytes": 1369072,
+    "url_documento": "https://www.sigaa.ufpi.br/sigaa/verProducao?idProducao=1368305&key=5835f57999b53b7bf1f8a7a6f3413f7f",
+    "url_portal": "https://www.sigaa.ufpi.br/sigaa/public/programa/portal.jsf?id=793",
+    "data_coleta": "2026-10-17T14:51:48.528481",
+    "classificacao_ia": {
+      "classe_predita": "aviso",
+      "confianca_percentual": 19.84,
+      "paginas": 101,
+      "distribuicao_probabilidades": {
+        "edital": 18.62,
+        "homologacao": 12.79,
+        "recurso": 13.98,
+        "resultado": 16.21,
+        "aviso": 19.84,
+        "retificacao": 18.57
+      },
+      "trecho_inicial": "Conceitos-chave de museologia Sob a direção de André DESVALLÉES e François MAIRESSE"
+    }
+  },
+  {
+    "faculdade": "UESPI",
+    "curso": "PROPPPGL - PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS",
+    "pasta_curso": "PROPPPGL_-_PROGRAMA_DE_POS-GRADUACAO_EM_LETRAS",
+    "nivel": "MESTRADO",
+    "cidade": "TERESINA",
+    "arquivo_pdf": "Regimento_do_Programa_de_Pos-Graduacao_em_Letras.pdf",
+    "caminho_relativo": "data/scraped/UESPI/PROPPPGL_-_PROGRAMA_DE_POS-GRADUACAO_EM_LETRAS/Regimento_do_Programa_de_Pos-Graduacao_em_Letras.pdf",
+    "tamanho_bytes": 282738,
+    "url_documento": "https://sigaa.uespi.br/sigaa/verProducao?idProducao=351220&key=46d7e5298f6d09fda765087ee77df09d",
+    "url_portal": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3487",
+    "data_coleta": "2026-10-17T14:52:21.086867",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 43.99,
+      "paginas": 28,
+      "distribuicao_probabilidades": {
+        "edital": 43.99,
+        "homologacao": 2.7,
+        "recurso": 2.35,
+        "resultado": 6.94,
+        "aviso": 23.79,
+        "retificacao": 20.22
+      },
+      "trecho_inicial": "UNIVERSIDADE ESTADUAL DO PIAUÍ PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS MESTRADO E DOUTORADO ANEXO DA RESOLUÇÃO CEPEX Nº 43/2022 REGIMENTO DO PROGRAMA DE PÓS-GRADUAÇÃO EM LETRAS TÍTULO I DA NATUREZA E OBJETIVOS Art..."
+    }
+  },
+  {
+    "faculdade": "UESPI",
+    "curso": "PROPPPGSC - PROGRAMA DE PÓS-GRADUAÇÃO INTERDISCIPLINAR EM SOCIEDADE E CULTURA",
+    "pasta_curso": "PROPPPGSC_-_PROGRAMA_DE_POS-GRADUACAO_INTERDISCIPLINAR_EM_SOCIEDA",
+    "nivel": "MESTRADO",
+    "cidade": "TERESINA",
+    "arquivo_pdf": "Resolucao_CEPEX_No_035_2015_Autoriza_provimento_de_recursos_orcam.pdf",
+    "caminho_relativo": "data/scraped/UESPI/PROPPPGSC_-_PROGRAMA_DE_POS-GRADUACAO_INTERDISCIPLINAR_EM_SOCIEDA/Resolucao_CEPEX_No_035_2015_Autoriza_provimento_de_recursos_orcam.pdf",
+    "tamanho_bytes": 2615515,
+    "url_documento": "https://sigaa.uespi.br/sigaa/verProducao?idProducao=357495&key=8e35e9afa701b27101b2cc54f621899a",
+    "url_portal": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3491",
+    "data_coleta": "2026-10-17T14:52:22.537228",
+    "classificacao_ia": {
+      "classe_predita": "indeterminado",
+      "confianca_percentual": 0.0,
+      "paginas": 4,
+      "motivo": "pdf_sem_texto_extraivel"
+    }
+  },
+  {
+    "faculdade": "UESPI",
+    "curso": "PROPPPGSC - PROGRAMA DE PÓS-GRADUAÇÃO INTERDISCIPLINAR EM SOCIEDADE E CULTURA",
+    "pasta_curso": "PROPPPGSC_-_PROGRAMA_DE_POS-GRADUACAO_INTERDISCIPLINAR_EM_SOCIEDA",
+    "nivel": "MESTRADO",
+    "cidade": "TERESINA",
+    "arquivo_pdf": "Formulario_para_Doacao_de_Material_Bibliografico_para_Biblioteca_.pdf",
+    "caminho_relativo": "data/scraped/UESPI/PROPPPGSC_-_PROGRAMA_DE_POS-GRADUACAO_INTERDISCIPLINAR_EM_SOCIEDA/Formulario_para_Doacao_de_Material_Bibliografico_para_Biblioteca_.pdf",
+    "tamanho_bytes": 128782,
+    "url_documento": "https://sigaa.uespi.br/sigaa/verProducao?idProducao=73821&key=8b0f63a83501ec9971cb308744e5615c",
+    "url_portal": "https://sigaa.uespi.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=3491",
+    "data_coleta": "2026-10-17T14:52:23.205465",
+    "classificacao_ia": {
+      "classe_predita": "edital",
+      "confianca_percentual": 34.87,
+      "paginas": 1,
+      "distribuicao_probabilidades": {
+        "edital": 34.87,
+        "homologacao": 3.71,
+        "recurso": 4.87,
+        "resultado": 11.87,
+        "aviso": 26.2,
+        "retificacao": 18.48
+      },
+      "trecho_inicial": "GOVERNO DO ESTADO DO PIAUÍ UNIVERSIDADE ESTADUAL DO PIAUÍ - UESPI BIBLIOTECA CENTRAL FORMULÁRIO PARA DOAÇÃO DE MATERIAL BIBLIOGRÁFICO Eu, __________________________________________________________________ _____________________________________________..."
+    }
+  }
+]
