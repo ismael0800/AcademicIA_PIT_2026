@@ -52,3 +52,35 @@ def test_web_interface_endpoint():
     assert response.status_code == 200
     assert "text/html" in response.headers.get("content-type", "")
     assert "AcademicIA" in response.text
+
+
+def test_predict_pdf_success():
+    """Valida inferência via upload de arquivo PDF real."""
+    base_dir = Path(__file__).resolve().parent.parent
+    sample_pdfs = list((base_dir / "data" / "raw").glob("**/*.pdf"))
+    if not sample_pdfs:
+        pytest.skip("Nenhum PDF encontrado em data/raw para teste.")
+
+    sample_pdf = sample_pdfs[0]
+    with open(sample_pdf, "rb") as f:
+        response = client.post(
+            "/predict/pdf",
+            files={"arquivo": (sample_pdf.name, f.read(), "application/pdf")}
+        )
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "sucesso"
+    assert "classe_predita" in data
+    assert data["classe_predita"] in ["edital", "homologacao", "recurso", "resultado", "aviso", "retificacao"]
+    assert data["confianca_percentual"] > 0
+    assert "distribuicao_probabilidades" in data
+
+
+def test_predict_pdf_invalid_extension():
+    """Valida rejeição de arquivos que não possuem extensão .pdf."""
+    response = client.post(
+        "/predict/pdf",
+        files={"arquivo": ("documento.txt", b"Texto de teste que nao eh pdf", "text/plain")}
+    )
+    assert response.status_code == 400
+
