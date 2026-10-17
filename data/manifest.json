@@ -1,12 +1,11 @@
 {
-  "dataset": "editais-pos-ufpi-v1",
-  "descricao": "Dataset de textos da primeira pagina de documentos oficiais de selecoes de pos-graduacao (Mestrado/Doutorado) do SIGAA/UFPI",
-  "source": "SIGAA / UFPI - Processos Seletivos Stricto Sensu",
-  "license_or_permission": "Uso academico autorizado sob a Lei de Acesso a Informacao (dados publicos governamentais)",
-  "raw_sha256": "6353084173e3e2aeb8f3904ccbe570086e6f0faabb9132338e1ad22dba9970fb",
-  "rows_raw": 75,
-  "rows_scanned_discarded": 7,
-  "rows_curated": 68,
+  "dataset": "editais-pos-ufpi-v2-expandido",
+  "descricao": "Dataset expandido de textos da primeira página de documentos oficiais de seleções de pós-graduação (Mestrado/Doutorado) do SIGAA (UFPI, UESPI, UFDPAR)",
+  "source": "SIGAA - Processos Seletivos Stricto Sensu (Amostra 50% dos programas do Piauí)",
+  "license_or_permission": "Uso acadêmico autorizado sob a Lei de Acesso à Informação (dados públicos governamentais)",
+  "rows_raw": 324,
+  "rows_scanned_discarded": 56,
+  "rows_curated": 268,
   "target": "categoria",
   "num_classes": 6,
   "classes": [
@@ -18,9 +17,9 @@
     "retificacao"
   ],
   "split": {
-    "train": 47,
-    "validation": 10,
-    "test": 11,
+    "train": 187,
+    "validation": 40,
+    "test": 41,
     "ratios": {
       "train": 0.70,
       "validation": 0.15,
@@ -29,7 +28,7 @@
   },
   "seed": 42,
   "known_limitations": [
-    "Sete documentos em PDF eram imagens escaneadas sem camada de texto (OCR) e foram descartados na fase de qualidade para nao poluir o treinamento",
-    "O recorte utiliza os primeiros 1000 caracteres de cada documento, onde se concentram o cabecalho e o objeto oficial da publicacao"
+    "Cinquenta e seis documentos em PDF eram imagens escaneadas sem camada de texto (OCR) e foram descartados na fase de qualidade para não poluir o treinamento",
+    "O recorte utiliza os primeiros 1000 caracteres de cada documento, onde se concentram o cabeçalho e o objeto oficial da publicação"
   ]
 }

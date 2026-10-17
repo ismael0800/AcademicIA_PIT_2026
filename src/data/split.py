@@ -24,13 +24,14 @@ def realizar_split():
     assert PROCESSED_FILE.exists(), f"Arquivo {PROCESSED_FILE} nao existe. Execute extract.py primeiro."
     df = pd.read_parquet(PROCESSED_FILE)
 
-    # 1. Filtra apenas documentos com texto valido (descarta PDFs escaneados com 0 caracteres)
+    # 1. Filtra apenas documentos com texto valido e deduplica para evitar data leakage
     df_valido = df[df["num_caracteres"] >= 50].copy()
+    df_valido = df_valido.drop_duplicates(subset=["texto"]).reset_index(drop=True)
     total_validos = len(df_valido)
     descartados = len(df) - total_validos
 
     print(f"[OK] Total de documentos carregados: {len(df)}")
-    print(f"[OK] Descartados por falta de texto (fotos escaneadas): {descartados}")
+    print(f"[OK] Descartados por falta de texto ou duplicidade exata: {descartados}")
     print(f"[OK] Documentos validos selecionados para o split: {total_validos}")
     print("-" * 55)
 
