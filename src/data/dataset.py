@@ -67,9 +67,22 @@ def limpar_documento(t: str) -> str:
 
 
 def tokenizar(texto: str) -> list[str]:
-    """Tokenizador focado em palavras semânticas com 2 ou mais letras."""
+    """Tokenizador focado em palavras semânticas e marcadores compostos de ação."""
     texto_limpo = limpar_documento(texto)
-    palavras = re.findall(r"\b[a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ]{2,}\b", texto_limpo.lower())
+    # Unifica expressões decisivas para retificação, aviso e homologação
+    texto_com_bigramas = re.sub(r"(?i)\bonde\s+se\s+l[eê]\b", "onde_se_le", texto_limpo)
+    texto_com_bigramas = re.sub(r"(?i)\bleia\s*[-–]?\s*se\b", "leia_se", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\bfica\s+alterad[oa]\b", "fica_alterado", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\bretifica[cç][aã]o\s+d[oe]\b", "retificacao_do", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\berrata\s+a[oe]\b", "errata_ao", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\baditivo\s+(?:n[ºo]?|a[oe])\b", "aditivo_ao", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\baviso\s+d[oe]\b", "aviso_de", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\bcronograma\s+d[a-z]*\b", "cronograma_de", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\bcomunicado\s+n[ºo]?\b", "comunicado_no", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\bhor[aá]rio\s+d[a-z]*\b", "horario_de", texto_com_bigramas)
+    texto_com_bigramas = re.sub(r"(?i)\bquadro\s+de\s+vagas\b", "quadro_de_vagas", texto_com_bigramas)
+    
+    palavras = re.findall(r"\b[a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ_]{2,}\b", texto_com_bigramas.lower())
     return palavras
 
 
@@ -153,21 +166,39 @@ def criar_dataloaders(batch_size: int = 8, max_len: int = 200):
     vocab.build_from_texts(df_train["texto"].tolist())
     vocab.save(MODELS_DIR / "vocab.json")
 
-    # Data Augmentation no Treino (janelas deslizantes para robustez a deslocamentos)
+    # Data Augmentation Adaptativo no Treino (reforça classes minoritárias: retificação, aviso, homologação)
     train_textos, train_cats = [], []
     for texto, cat in zip(df_train["texto"], df_train["categoria"]):
         train_textos.append(texto)
         train_cats.append(cat)
         
         tokens = tokenizar(texto)
-        # Variação 1: início ligeiramente deslocado (pula introdução)
-        if len(tokens) > 40:
-            train_textos.append(" ".join(tokens[15:]))
-            train_cats.append(cat)
-        # Variação 2: início a partir do corpo
-        if len(tokens) > 70:
-            train_textos.append(" ".join(tokens[30:]))
-            train_cats.append(cat)
+        num_tokens = len(tokens)
+        
+        if cat in ["retificacao", "aviso"]:
+            if num_tokens > 25:
+                train_textos.append(" ".join(tokens[10:]))
+                train_cats.append(cat)
+            if num_tokens > 50:
+                train_textos.append(" ".join(tokens[25:]))
+                train_cats.append(cat)
+            if num_tokens > 80:
+                train_textos.append(" ".join(tokens[45:]))
+                train_cats.append(cat)
+            if num_tokens > 60:
+                train_textos.append(" ".join(tokens[15:110]))
+                train_cats.append(cat)
+        elif cat in ["homologacao", "recurso"]:
+            if num_tokens > 30:
+                train_textos.append(" ".join(tokens[12:]))
+                train_cats.append(cat)
+            if num_tokens > 60:
+                train_textos.append(" ".join(tokens[28:]))
+                train_cats.append(cat)
+        else:
+            if num_tokens > 40:
+                train_textos.append(" ".join(tokens[20:]))
+                train_cats.append(cat)
 
     train_ds = EditaisDataset(train_textos, train_cats, vocab, max_len=max_len)
     val_ds = EditaisDataset(df_val["texto"].tolist(), df_val["categoria"].tolist(), vocab, max_len=max_len)

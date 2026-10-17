@@ -69,8 +69,18 @@ def treinar_experimento(
         num_filters=num_filters
     ).to(device)
 
-    # 3. Loss com label smoothing e Otimizador AdamW com Cosine Annealing
-    loss_fn = nn.CrossEntropyLoss(label_smoothing=0.05)
+    # 3. Calcula pesos de classes (Square-Root Inverse Frequency) para equilibrar retificação, aviso e edital
+    from collections import Counter
+    from src.data.dataset import ID_TO_LABEL
+    counts = Counter(train_loader.dataset.categorias)
+    total_samples = len(train_loader.dataset)
+    weights = [total_samples / (num_classes * max(1, counts.get(ID_TO_LABEL[i], 1))) for i in range(num_classes)]
+    weights_tensor = torch.tensor(weights, dtype=torch.float32).to(device)
+    weights_tensor = torch.sqrt(weights_tensor)
+    weights_tensor = weights_tensor / weights_tensor.mean()
+
+    print(f"[*] Pesos das classes para equilibrar a Loss: {dict(zip([ID_TO_LABEL[i] for i in range(6)], [round(w.item(), 2) for w in weights_tensor]))}")
+    loss_fn = nn.CrossEntropyLoss(weight=weights_tensor, label_smoothing=0.05)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
 

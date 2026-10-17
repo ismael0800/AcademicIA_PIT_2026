@@ -1,22 +1,37 @@
 {
   "total_testes": 39,
-  "total_erros": 10,
-  "acuracia_teste": 0.7436,
-  "f1_macro_teste": 0.6778,
-  "f1_ponderado_teste": 0.7429,
+  "total_erros": 11,
+  "acuracia_teste": 0.7179,
+  "f1_macro_teste": 0.658,
+  "f1_ponderado_teste": 0.7001,
   "erros_detalhados": [
+    {
+      "indice": 0,
+      "classe_real": "edital",
+      "classe_predita": "resultado",
+      "confianca_predicao": 0.4587,
+      "distribuicao_completa": {
+        "edital": 0.3128,
+        "homologacao": 0.037,
+        "recurso": 0.0989,
+        "resultado": 0.4587,
+        "aviso": 0.0264,
+        "retificacao": 0.0662
+      },
+      "trecho_documento": "UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS HUMANAS E LETRAS PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA POLÍTICA COMUNICADO SOBRE A DISTRIBUIÇÃO DE BOLSAS DE MESTRADO – PAPG/FAPEPI O Programa de Pós-Graduação em Ciência Política da Universidade Federa..."
+    },
     {
       "indice": 3,
       "classe_real": "aviso",
       "classe_predita": "edital",
-      "confianca_predicao": 0.9462,
+      "confianca_predicao": 0.8472,
       "distribuicao_completa": {
-        "edital": 0.9462,
-        "homologacao": 0.0056,
-        "recurso": 0.0139,
-        "resultado": 0.0081,
-        "aviso": 0.0145,
-        "retificacao": 0.0117
+        "edital": 0.8472,
+        "homologacao": 0.013,
+        "recurso": 0.0306,
+        "resultado": 0.0292,
+        "aviso": 0.0397,
+        "retificacao": 0.0403
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI CENTRO DE CIÊNCIAS DA NATUREZA - CCN MESTRADO PROFISSIONAL EM MATEMÁTICA-PROFMAT/UFPI EDITAL PROFMAT/UFPI Nº 02/2026 PROCESSO SELETIVO PARA CREDENCIAMENTO DE DOCENTE PERMANENTE NO PROGRAMA D..."
     },
@@ -24,14 +39,14 @@
       "indice": 8,
       "classe_real": "resultado",
       "classe_predita": "recurso",
-      "confianca_predicao": 0.4832,
+      "confianca_predicao": 0.7389,
       "distribuicao_completa": {
-        "edital": 0.0726,
-        "homologacao": 0.0378,
-        "recurso": 0.4832,
-        "resultado": 0.3242,
-        "aviso": 0.034,
-        "retificacao": 0.0482
+        "edital": 0.0303,
+        "homologacao": 0.0236,
+        "recurso": 0.7389,
+        "resultado": 0.1277,
+        "aviso": 0.0297,
+        "retificacao": 0.0498
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA NATUREZA PROGRAMA DE PÓS-GRADUAÇÃO EM ARQUEOLOGIA Campus Universitário Ministro Petrônio Portella, Bairro Ininga, Teresina, Piauí, CEP ..."
     },
@@ -39,44 +54,29 @@
       "indice": 14,
       "classe_real": "recurso",
       "classe_predita": "resultado",
-      "confianca_predicao": 0.9043,
+      "confianca_predicao": 0.8182,
       "distribuicao_completa": {
-        "edital": 0.0227,
-        "homologacao": 0.0101,
-        "recurso": 0.0188,
-        "resultado": 0.9043,
-        "aviso": 0.0167,
-        "retificacao": 0.0273
+        "edital": 0.0292,
+        "homologacao": 0.0121,
+        "recurso": 0.0626,
+        "resultado": 0.8182,
+        "aviso": 0.0203,
+        "retificacao": 0.0576
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA NATUREZA PROGRAMA DE PÓS-GRADUAÇÃO EM ARQUEOLOGIA Campus Universitário Ministro Petrônio Portella, Bairro Ininga, Teresina, Piauí, CEP ..."
-    },
-    {
-      "indice": 16,
-      "classe_real": "homologacao",
-      "classe_predita": "edital",
-      "confianca_predicao": 0.4623,
-      "distribuicao_completa": {
-        "edital": 0.4623,
-        "homologacao": 0.2015,
-        "recurso": 0.0485,
-        "resultado": 0.2004,
-        "aviso": 0.0489,
-        "retificacao": 0.0384
-      },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO COORDENAÇÃO DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA E ENGENHARIA DOS MATERIAIS Home Page: http://www.posgraduacao.ufpi.br//materiais E-mail: materiais@ufpi.e..."
     },
     {
       "indice": 22,
       "classe_real": "resultado",
       "classe_predita": "edital",
-      "confianca_predicao": 0.8443,
+      "confianca_predicao": 0.8673,
       "distribuicao_completa": {
-        "edital": 0.8443,
-        "homologacao": 0.0233,
-        "recurso": 0.0486,
-        "resultado": 0.0112,
-        "aviso": 0.0298,
-        "retificacao": 0.0428
+        "edital": 0.8673,
+        "homologacao": 0.0309,
+        "recurso": 0.0157,
+        "resultado": 0.0129,
+        "aviso": 0.0516,
+        "retificacao": 0.0216
       },
       "trecho_documento": "FUNDAÇÃO UNIVERSIDADE ESTADUAL DO PIAUÍ Rua João Cabral, 2231, Norte - Bairro Pirajá, Teresina/PI, CEP 64002-150 Telefone: - https://www.uespi.br EDITAL Nº 03/2026 - PPGSC/PROP/UESPI Processo nº 00089.004240/2026-06 SELEÇÃO INTERNA DE BOLSISTAS DO PR..."
     },
@@ -84,14 +84,14 @@
       "indice": 23,
       "classe_real": "retificacao",
       "classe_predita": "edital",
-      "confianca_predicao": 0.9601,
+      "confianca_predicao": 0.9253,
       "distribuicao_completa": {
-        "edital": 0.9601,
-        "homologacao": 0.009,
-        "recurso": 0.0088,
-        "resultado": 0.0047,
-        "aviso": 0.0061,
-        "retificacao": 0.0113
+        "edital": 0.9253,
+        "homologacao": 0.0145,
+        "recurso": 0.0127,
+        "resultado": 0.0088,
+        "aviso": 0.0122,
+        "retificacao": 0.0265
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE E COMUNIDADE Avenida Frei Serafim, 2280 - Teresina, Piauí, CEP 64000-020 Telefone: 86-3215-464..."
     },
@@ -99,14 +99,14 @@
       "indice": 24,
       "classe_real": "aviso",
       "classe_predita": "edital",
-      "confianca_predicao": 0.6799,
+      "confianca_predicao": 0.5774,
       "distribuicao_completa": {
-        "edital": 0.6799,
-        "homologacao": 0.0172,
-        "recurso": 0.0497,
-        "resultado": 0.015,
-        "aviso": 0.1977,
-        "retificacao": 0.0404
+        "edital": 0.5774,
+        "homologacao": 0.0308,
+        "recurso": 0.12,
+        "resultado": 0.1684,
+        "aviso": 0.0495,
+        "retificacao": 0.0539
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS DA SAÚDE PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piau..."
     },
@@ -114,44 +114,59 @@
       "indice": 25,
       "classe_real": "retificacao",
       "classe_predita": "edital",
-      "confianca_predicao": 0.9043,
+      "confianca_predicao": 0.9377,
       "distribuicao_completa": {
-        "edital": 0.9043,
-        "homologacao": 0.0203,
-        "recurso": 0.0147,
-        "resultado": 0.0123,
-        "aviso": 0.0179,
-        "retificacao": 0.0305
+        "edital": 0.9377,
+        "homologacao": 0.0178,
+        "recurso": 0.0142,
+        "resultado": 0.0057,
+        "aviso": 0.0111,
+        "retificacao": 0.0135
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS HUMANAS E LETRAS PROGRAMA DE PÓS-GRADUAÇÃO EM ANTROPOLOGIA Campus Universitário Ministro Petrônio Portella, Bairro Ininga, Teresina, Piauí..."
     },
     {
-      "indice": 29,
-      "classe_real": "homologacao",
-      "classe_predita": "retificacao",
-      "confianca_predicao": 0.2469,
+      "indice": 28,
+      "classe_real": "recurso",
+      "classe_predita": "resultado",
+      "confianca_predicao": 0.5222,
       "distribuicao_completa": {
-        "edital": 0.066,
-        "homologacao": 0.1996,
-        "recurso": 0.1761,
-        "resultado": 0.0886,
-        "aviso": 0.2228,
-        "retificacao": 0.2469
+        "edital": 0.0174,
+        "homologacao": 0.0877,
+        "recurso": 0.3313,
+        "resultado": 0.5222,
+        "aviso": 0.0154,
+        "retificacao": 0.0261
       },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS DA SAÚDE PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piau..."
+      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM ENFERMAGEM EDITAL Nº 05/2025 – UFPI/CCS/PPGENF EDITAL DE INSCRIÇÃO, SELEÇÃO E MATRÍCULA PARA O PROGR..."
+    },
+    {
+      "indice": 30,
+      "classe_real": "aviso",
+      "classe_predita": "resultado",
+      "confianca_predicao": 0.7492,
+      "distribuicao_completa": {
+        "edital": 0.1048,
+        "homologacao": 0.0329,
+        "recurso": 0.0233,
+        "resultado": 0.7492,
+        "aviso": 0.054,
+        "retificacao": 0.0358
+      },
+      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO COORDENADORIA DE PROGRAMAS STRICTO SENSU PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA SELEÇÃO PPGA - EDITAL N° 001/2019/PPGA A Comissão de Seleção para preenchimen..."
     },
     {
       "indice": 37,
       "classe_real": "edital",
       "classe_predita": "retificacao",
-      "confianca_predicao": 0.9624,
+      "confianca_predicao": 0.9447,
       "distribuicao_completa": {
-        "edital": 0.011,
-        "homologacao": 0.0053,
-        "recurso": 0.0048,
-        "resultado": 0.0069,
-        "aviso": 0.0096,
-        "retificacao": 0.9624
+        "edital": 0.0154,
+        "homologacao": 0.0117,
+        "recurso": 0.0105,
+        "resultado": 0.008,
+        "aviso": 0.0097,
+        "retificacao": 0.9447
       },
       "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS DA SAÚDE PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piau..."
     }

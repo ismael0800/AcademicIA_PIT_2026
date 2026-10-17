@@ -34,10 +34,10 @@ def limpar_texto(texto: str) -> str:
     texto = re.sub(r"\s{2,}", " ", texto)
     return texto.strip()
 
-def extrair_texto_pdf(pdf_path: Path, max_chars: int = 1000) -> tuple[str, int]:
+def extrair_texto_pdf(pdf_path: Path, max_chars: int = 1600) -> tuple[str, int]:
     """
-    Extrai o texto da primeira página do PDF.
-    Se a primeira página for muito curta (< 80 caracteres), tenta ler a segunda página.
+    Extrai o texto da primeira página do PDF (e página 2 se necessário)
+    para capturar o miolo do objeto, erratas e cronogramas (até 1600 caracteres).
     """
     try:
         reader = PdfReader(str(pdf_path))
@@ -49,7 +49,8 @@ def extrair_texto_pdf(pdf_path: Path, max_chars: int = 1000) -> tuple[str, int]:
         p1 = reader.pages[0].extract_text() or ""
         texto_acumulado += p1
 
-        if len(limpar_texto(texto_acumulado)) < 80 and num_paginas > 1:
+        # Se o texto for menor que 1200 caracteres e houver página 2, complementa
+        if len(limpar_texto(texto_acumulado)) < 1200 and num_paginas > 1:
             p2 = reader.pages[1].extract_text() or ""
             texto_acumulado += " " + p2
 
