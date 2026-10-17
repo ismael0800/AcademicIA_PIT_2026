@@ -10,3 +10,5 @@ pytest
 pypdf
 mlflow
 dvc
+python-multipart
+httpx
