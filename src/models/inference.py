@@ -195,6 +195,18 @@ class Predictor:
                     "paginas": num_paginas
                 }
 
+            # Enriquecimento contextual com nome do arquivo (se disponivel)
+            nome_arquivo = ""
+            if isinstance(pdf_source, (str, Path)):
+                nome_arquivo = Path(pdf_source).name
+            elif hasattr(pdf_source, "name"):
+                nome_arquivo = Path(str(pdf_source.name)).name
+
+            if nome_arquivo:
+                nome_limpo = re.sub(r"^(?:UFPI|UESPI|IFPI|UFDPAR)_\d+_", "", Path(nome_arquivo).stem)
+                nome_limpo = re.sub(r"[_\-.]+", " ", nome_limpo).strip()
+                texto_acumulado = f"{nome_limpo}. {texto_acumulado}"
+
             resultado = self.predict_text(texto_acumulado)
             resultado["paginas_totais"] = num_paginas
             resultado["latencia_total_ms"] = round((time.perf_counter() - inicio) * 1000, 2)

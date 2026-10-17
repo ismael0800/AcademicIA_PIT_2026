@@ -1,174 +1,159 @@
 {
-  "total_testes": 39,
-  "total_erros": 11,
-  "acuracia_teste": 0.7179,
-  "f1_macro_teste": 0.658,
-  "f1_ponderado_teste": 0.7001,
+  "total_testes": 46,
+  "total_erros": 10,
+  "acuracia_teste": 0.7826,
+  "f1_macro_teste": 0.6683,
+  "f1_ponderado_teste": 0.7899,
   "erros_detalhados": [
     {
-      "indice": 0,
-      "classe_real": "edital",
-      "classe_predita": "resultado",
-      "confianca_predicao": 0.4587,
+      "indice": 5,
+      "classe_real": "homologacao",
+      "classe_predita": "edital",
+      "confianca_predicao": 0.4621,
       "distribuicao_completa": {
-        "edital": 0.3128,
-        "homologacao": 0.037,
-        "recurso": 0.0989,
-        "resultado": 0.4587,
-        "aviso": 0.0264,
-        "retificacao": 0.0662
+        "edital": 0.4621,
+        "homologacao": 0.0207,
+        "recurso": 0.0881,
+        "resultado": 0.2165,
+        "aviso": 0.1819,
+        "retificacao": 0.0308
       },
-      "trecho_documento": "UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS HUMANAS E LETRAS PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA POLÍTICA COMUNICADO SOBRE A DISTRIBUIÇÃO DE BOLSAS DE MESTRADO – PAPG/FAPEPI O Programa de Pós-Graduação em Ciência Política da Universidade Federa..."
+      "trecho_documento": "ListaPreliminarHomologados B assinado. U N I V E R S I D A D E F E D E R A L D O P I A U Í \u0015 U F P I D E P A R T A M E N T O D E F Í S I C A M E S T R A D O N A C I O N A L P R O F I S S I O N A L E M E N S I N O D E F Í S I C A \u0015 P O L O 2 6 L I S T..."
     },
     {
-      "indice": 3,
+      "indice": 7,
+      "classe_real": "homologacao",
+      "classe_predita": "aviso",
+      "confianca_predicao": 0.4287,
+      "distribuicao_completa": {
+        "edital": 0.1345,
+        "homologacao": 0.0334,
+        "recurso": 0.0495,
+        "resultado": 0.3257,
+        "aviso": 0.4287,
+        "retificacao": 0.0281
+      },
+      "trecho_documento": "Candidatos com inscrição deferida para ENA 2027. número inscrição nome candidato 2027-0006416-7 ADIM SILVA SOUSA 2027-0011898-4 ADONIAS CAMPELO DA SILVA 2027-0009246-2 ADRIEL SILVA ARAUJO 2027-0010413-4 ALAYANNY CRISCELIA DA SILVA 2027-0000242-1 ALEX..."
+    },
+    {
+      "indice": 12,
+      "classe_real": "retificacao",
+      "classe_predita": "aviso",
+      "confianca_predicao": 0.4486,
+      "distribuicao_completa": {
+        "edital": 0.2432,
+        "homologacao": 0.0279,
+        "recurso": 0.0379,
+        "resultado": 0.1031,
+        "aviso": 0.4486,
+        "retificacao": 0.1393
+      },
+      "trecho_documento": "Errata Nº 02 Edital N° 03 2025. MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM ENFERMAGEM ERRATA DO EDITAL Nº 03/2025-PPGENF/UFPI -PROCESSO SELETIV..."
+    },
+    {
+      "indice": 13,
+      "classe_real": "resultado",
+      "classe_predita": "edital",
+      "confianca_predicao": 0.6567,
+      "distribuicao_completa": {
+        "edital": 0.6567,
+        "homologacao": 0.022,
+        "recurso": 0.0487,
+        "resultado": 0.1708,
+        "aviso": 0.0735,
+        "retificacao": 0.0283
+      },
+      "trecho_documento": "O PPGHB torna público o resultado da Seleção do Programa Inst. MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS HUMANAS E LETRAS Programa de Pós-Graduação em História do Brasil Campus Universitário “Ministro Petrônio Portella”,..."
+    },
+    {
+      "indice": 16,
       "classe_real": "aviso",
       "classe_predita": "edital",
-      "confianca_predicao": 0.8472,
+      "confianca_predicao": 0.7323,
       "distribuicao_completa": {
-        "edital": 0.8472,
-        "homologacao": 0.013,
-        "recurso": 0.0306,
-        "resultado": 0.0292,
-        "aviso": 0.0397,
-        "retificacao": 0.0403
+        "edital": 0.7323,
+        "homologacao": 0.0138,
+        "recurso": 0.0219,
+        "resultado": 0.0506,
+        "aviso": 0.1303,
+        "retificacao": 0.0512
       },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI CENTRO DE CIÊNCIAS DA NATUREZA - CCN MESTRADO PROFISSIONAL EM MATEMÁTICA-PROFMAT/UFPI EDITAL PROFMAT/UFPI Nº 02/2026 PROCESSO SELETIVO PARA CREDENCIAMENTO DE DOCENTE PERMANENTE NO PROGRAMA D..."
+      "trecho_documento": "HORÁRIOS DA SEGUNDA ETAPA (DEFESAS E ENTREVISTAS) Edital 01. EDITAL N° 01/2025 – Programa de Pós-Graduação em Farmacologia- PPGFARM/UFPI Processo seletivo Mestrado e Doutorado – Ingresso 2026.1- Segunda Etapa (Classificatória): Entrevista (Mestrado) ..."
     },
     {
-      "indice": 8,
-      "classe_real": "resultado",
-      "classe_predita": "recurso",
-      "confianca_predicao": 0.7389,
+      "indice": 20,
+      "classe_real": "edital",
+      "classe_predita": "aviso",
+      "confianca_predicao": 0.7888,
       "distribuicao_completa": {
-        "edital": 0.0303,
-        "homologacao": 0.0236,
-        "recurso": 0.7389,
-        "resultado": 0.1277,
-        "aviso": 0.0297,
-        "retificacao": 0.0498
+        "edital": 0.0896,
+        "homologacao": 0.0294,
+        "recurso": 0.031,
+        "resultado": 0.0197,
+        "aviso": 0.7888,
+        "retificacao": 0.0415
       },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA NATUREZA PROGRAMA DE PÓS-GRADUAÇÃO EM ARQUEOLOGIA Campus Universitário Ministro Petrônio Portella, Bairro Ininga, Teresina, Piauí, CEP ..."
-    },
-    {
-      "indice": 14,
-      "classe_real": "recurso",
-      "classe_predita": "resultado",
-      "confianca_predicao": 0.8182,
-      "distribuicao_completa": {
-        "edital": 0.0292,
-        "homologacao": 0.0121,
-        "recurso": 0.0626,
-        "resultado": 0.8182,
-        "aviso": 0.0203,
-        "retificacao": 0.0576
-      },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA NATUREZA PROGRAMA DE PÓS-GRADUAÇÃO EM ARQUEOLOGIA Campus Universitário Ministro Petrônio Portella, Bairro Ininga, Teresina, Piauí, CEP ..."
-    },
-    {
-      "indice": 22,
-      "classe_real": "resultado",
-      "classe_predita": "edital",
-      "confianca_predicao": 0.8673,
-      "distribuicao_completa": {
-        "edital": 0.8673,
-        "homologacao": 0.0309,
-        "recurso": 0.0157,
-        "resultado": 0.0129,
-        "aviso": 0.0516,
-        "retificacao": 0.0216
-      },
-      "trecho_documento": "FUNDAÇÃO UNIVERSIDADE ESTADUAL DO PIAUÍ Rua João Cabral, 2231, Norte - Bairro Pirajá, Teresina/PI, CEP 64002-150 Telefone: - https://www.uespi.br EDITAL Nº 03/2026 - PPGSC/PROP/UESPI Processo nº 00089.004240/2026-06 SELEÇÃO INTERNA DE BOLSISTAS DO PR..."
+      "trecho_documento": "O PPGCF divulga o Edital de seleção de Mestrado e Doutorado c...."
     },
     {
       "indice": 23,
-      "classe_real": "retificacao",
-      "classe_predita": "edital",
-      "confianca_predicao": 0.9253,
+      "classe_real": "resultado",
+      "classe_predita": "recurso",
+      "confianca_predicao": 0.9627,
       "distribuicao_completa": {
-        "edital": 0.9253,
-        "homologacao": 0.0145,
-        "recurso": 0.0127,
-        "resultado": 0.0088,
-        "aviso": 0.0122,
-        "retificacao": 0.0265
+        "edital": 0.0062,
+        "homologacao": 0.0064,
+        "recurso": 0.9627,
+        "resultado": 0.0103,
+        "aviso": 0.0073,
+        "retificacao": 0.007
       },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE E COMUNIDADE Avenida Frei Serafim, 2280 - Teresina, Piauí, CEP 64000-020 Telefone: 86-3215-464..."
+      "trecho_documento": "Seleção PRAPG 2026 Resultado Etapa 1. MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA NATUREZA PROGRAMA DE PÓS-GRADUAÇÃO EM ARQUEOLOGIA Campus Universitário Ministro Petrônio Portella..."
     },
     {
-      "indice": 24,
-      "classe_real": "aviso",
-      "classe_predita": "edital",
-      "confianca_predicao": 0.5774,
-      "distribuicao_completa": {
-        "edital": 0.5774,
-        "homologacao": 0.0308,
-        "recurso": 0.12,
-        "resultado": 0.1684,
-        "aviso": 0.0495,
-        "retificacao": 0.0539
-      },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS DA SAÚDE PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piau..."
-    },
-    {
-      "indice": 25,
-      "classe_real": "retificacao",
-      "classe_predita": "edital",
-      "confianca_predicao": 0.9377,
-      "distribuicao_completa": {
-        "edital": 0.9377,
-        "homologacao": 0.0178,
-        "recurso": 0.0142,
-        "resultado": 0.0057,
-        "aviso": 0.0111,
-        "retificacao": 0.0135
-      },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS HUMANAS E LETRAS PROGRAMA DE PÓS-GRADUAÇÃO EM ANTROPOLOGIA Campus Universitário Ministro Petrônio Portella, Bairro Ininga, Teresina, Piauí..."
-    },
-    {
-      "indice": 28,
-      "classe_real": "recurso",
-      "classe_predita": "resultado",
-      "confianca_predicao": 0.5222,
-      "distribuicao_completa": {
-        "edital": 0.0174,
-        "homologacao": 0.0877,
-        "recurso": 0.3313,
-        "resultado": 0.5222,
-        "aviso": 0.0154,
-        "retificacao": 0.0261
-      },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO CENTRO DE CIÊNCIAS DA SAÚDE PROGRAMA DE PÓS-GRADUAÇÃO EM ENFERMAGEM EDITAL Nº 05/2025 – UFPI/CCS/PPGENF EDITAL DE INSCRIÇÃO, SELEÇÃO E MATRÍCULA PARA O PROGR..."
-    },
-    {
-      "indice": 30,
-      "classe_real": "aviso",
-      "classe_predita": "resultado",
-      "confianca_predicao": 0.7492,
-      "distribuicao_completa": {
-        "edital": 0.1048,
-        "homologacao": 0.0329,
-        "recurso": 0.0233,
-        "resultado": 0.7492,
-        "aviso": 0.054,
-        "retificacao": 0.0358
-      },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO COORDENADORIA DE PROGRAMAS STRICTO SENSU PROGRAMA DE PÓS-GRADUAÇÃO EM AGRONOMIA SELEÇÃO PPGA - EDITAL N° 001/2019/PPGA A Comissão de Seleção para preenchimen..."
-    },
-    {
-      "indice": 37,
+      "indice": 32,
       "classe_real": "edital",
       "classe_predita": "retificacao",
-      "confianca_predicao": 0.9447,
+      "confianca_predicao": 0.3443,
       "distribuicao_completa": {
-        "edital": 0.0154,
-        "homologacao": 0.0117,
-        "recurso": 0.0105,
-        "resultado": 0.008,
-        "aviso": 0.0097,
-        "retificacao": 0.9447
+        "edital": 0.1302,
+        "homologacao": 0.0755,
+        "recurso": 0.2681,
+        "resultado": 0.0135,
+        "aviso": 0.1685,
+        "retificacao": 0.3443
       },
-      "trecho_documento": "MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ CENTRO DE CIÊNCIAS DA SAÚDE PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS FARMACÊUTICAS Campus Universitário Ministro Petrônio Portela, Bairro Ininga, Teresina, Piau..."
+      "trecho_documento": "Programa de Pós Graduação em Ciências Agrárias aditamento ao. MINISTÉRIO DA EDUCAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ PRÓ-REITORIA DE ENSINO DE PÓS-GRADUAÇÃO COORDENADORIA DE PÓS-GRADUAÇÃO CAMPUS PROFa CINOBELINA ELVAS COORDENAÇÃO DO PROGRAMA DE PÓS-GRA..."
+    },
+    {
+      "indice": 39,
+      "classe_real": "retificacao",
+      "classe_predita": "recurso",
+      "confianca_predicao": 0.7488,
+      "distribuicao_completa": {
+        "edital": 0.0144,
+        "homologacao": 0.0238,
+        "recurso": 0.7488,
+        "resultado": 0.0277,
+        "aviso": 0.0693,
+        "retificacao": 0.1161
+      },
+      "trecho_documento": "Errata ao Edital n 01 2025 Etapa III Recurso Entrevista assinado. 1 ERRATA AO EDITAL Nº 01/2025 DO PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIAS DO MOVIMENTO – MESTRADO O Programa de Pós-Graduação em Ciências do Movimento (PPGCMov/CCS/UFPI), torna pública a ..."
+    },
+    {
+      "indice": 42,
+      "classe_real": "aviso",
+      "classe_predita": "retificacao",
+      "confianca_predicao": 0.8857,
+      "distribuicao_completa": {
+        "edital": 0.0539,
+        "homologacao": 0.0144,
+        "recurso": 0.0107,
+        "resultado": 0.0214,
+        "aviso": 0.0139,
+        "retificacao": 0.8857
+      },
+      "trecho_documento": "MNPEF Retificação Edital Seleção 07 2022 (1). EDITAL DE SELEÇÃO – MNPEF/SBF No 07/2022 PROCESSO SELETIVO DE INGRESSO NO CURSO DE MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FÍSICA TURMA 2023 RETIFICAÇÃO: alteração de cronograma de inscrições ANEXO I:..."
     }
   ]
 }

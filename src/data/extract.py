@@ -34,10 +34,19 @@ def limpar_texto(texto: str) -> str:
     texto = re.sub(r"\s{2,}", " ", texto)
     return texto.strip()
 
+def limpar_nome_arquivo(nome: str) -> str:
+    """Extrai termos semânticos do nome do arquivo para enriquecimento contextual."""
+    nome_sem_ext = Path(nome).stem
+    # Remove prefixos numéricos ex: UFPI_348_
+    nome_limpo = re.sub(r"^(?:UFPI|UESPI|IFPI|UFDPAR)_\d+_", "", nome_sem_ext)
+    nome_limpo = re.sub(r"[_\-.]+", " ", nome_limpo)
+    nome_limpo = re.sub(r"\s{2,}", " ", nome_limpo).strip()
+    return nome_limpo
+
 def extrair_texto_pdf(pdf_path: Path, max_chars: int = 1600) -> tuple[str, int]:
     """
     Extrai o texto da primeira página do PDF (e página 2 se necessário)
-    para capturar o miolo do objeto, erratas e cronogramas (até 1600 caracteres).
+    e incorpora o nome do arquivo para enriquecimento contextual (até 1600 caracteres).
     """
     try:
         reader = PdfReader(str(pdf_path))
@@ -54,7 +63,8 @@ def extrair_texto_pdf(pdf_path: Path, max_chars: int = 1600) -> tuple[str, int]:
             p2 = reader.pages[1].extract_text() or ""
             texto_acumulado += " " + p2
 
-        texto_limpo = limpar_texto(texto_acumulado)
+        meta_nome = limpar_nome_arquivo(pdf_path.name)
+        texto_limpo = f"{meta_nome}. {limpar_texto(texto_acumulado)}".strip()
         return texto_limpo[:max_chars], num_paginas
     except Exception as e:
         print(f"[!] Erro ao ler {pdf_path.name}: {e}")
